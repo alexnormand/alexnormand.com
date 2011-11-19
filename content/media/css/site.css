@@ -209,7 +209,7 @@ section.content{
 /* listing */
 
 .listing{
-    margin-top: 24px;
+    margin-top: 7px;
 }
 
 .listing img{
@@ -218,16 +218,12 @@ section.content{
 }
 
 .listing li{
-    background-color: #ededed;
     list-style-type: none;
-    float: left;
-    width: 272px;
     margin-right: 24px;
-    margin-bottom: 24px;
+    margin-bottom: 1px;
     padding: 12px;
-    -moz-box-shadow: 0px 4px 12px #ccc; /* FF3.5+ */
-    -webkit-box-shadow: 0px 4px 12px #ccc; /* Saf3.0+, Chrome */
-          box-shadow: 0px 4px 12px #ccc; /* Opera 10.5, IE 9.0 */
+    -moz-box-shadow: 0px 4px 12px #ccc; /* FF3.5+ */ /* Saf3.0+, Chrome */
+           /* Opera 10.5, IE 9.0 */
               filter:  progid:DXImageTransform.Microsoft.dropshadow(OffX=12px, OffY=12px, Color='#ccc'); /* IE6,IE7 */
           -ms-filter: "progid:DXImageTransform.Microsoft.dropshadow(OffX=12px, OffY=12px, Color='#ccc')"; /* IE8 */
 
@@ -242,15 +238,16 @@ section.content{
 }
 
 .listing li p{
-    font-size: 10px;
-    line-height: 12px;
-    margin-bottom: 12px;
+    font-size: 13px;
+    line-height: 20px;
+    margin-bottom: 5px;
+    color: #444;
+    font-family: verdana;
 }
 
 
 .listing h3{
     border-bottom: 1px solid #ccc;
-    font-size: 12px;
     line-height: 18px;
     margin-bottom: 6px;
 }
@@ -385,25 +382,24 @@ a.backlink:hover, a.prev:hover, a.next:hover{
 
 /*===== CUSTOM CSS =====*/
 #main {
-    width: 700px;
+    width: 900px;
     margin: 11px auto;
 }
 
-nav.main_nav {
-    position: fixed;
-    top: 95px;
-    right: 10%;
-    background-color: #F7F7F7;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+nav.main_nav {       
+    float: right;
 }
 
 nav.main_nav ul {
     list-style-type: none;
     padding: 15px;
+    float: left;
 }
 
 nav.main_nav li {
     font-weight: bold;
+    float: left;
+    margin: 0 20px;
 }
 
 ::selection {
