@@ -1,0 +1,32 @@
+{% extends "base.j2" %}
+
+{% block main -%}
+<article class="post">
+<h1 class="title">
+    <a href="{{ content_url(resource.url) }}">
+        {{ resource.meta.title }}
+    </a>
+</h1>
+<time datetime="{{ resource.meta.created.strftime('%Y-%m-%d') }}">
+    Posted: {{ resource.meta.created.strftime('%a, %d %b %Y') }}
+</time>
+
+{% if resource.meta.tags %}
+<ul class="tags clear">
+{% for tag in resource.meta.tags %}
+<li>
+    <a class="small" href="{{ content_url('blog/tags/'~tag~'.html') }}">
+        {{ tag }}
+    </a>
+</li>
+{% endfor %}
+</ul>
+{% endif %}
+{% filter markdown|typogrify -%}
+{% mark post -%}
+{% block post -%}{%- endblock %}
+{%- endmark %}
+{%- endfilter %}
+</article>
+
+{%- endblock %}
