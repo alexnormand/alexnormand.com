@@ -3,7 +3,7 @@
     baseUrl: "./",
     paths: {
 	order: 'libs/require/order',
-	jquery: 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min',
+	jquery: 'libs/jquery',
 	site: 'site'
 
     },
