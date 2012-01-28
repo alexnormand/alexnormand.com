@@ -19,12 +19,20 @@ context:
                 css_class: home
                 type: node
                 url: /
+
+
             -
-                name: Projects
-                description: Projects
-                css_class: projects
-                type: node
-                url: portfolio
+                name: Github
+                description: My Github profile
+                type: page
+                url: "https://github.com/alexnormand"
+
+#            -
+ #               name: Projects
+ #               description: Projects
+ #               css_class: projects
+ #               type: node
+ #               url: portfolio
             -
                 name: Blog
                 description: Blog
