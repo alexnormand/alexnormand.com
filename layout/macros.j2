@@ -28,7 +28,11 @@
         <li>
             <a title="{{ item.description }}"
                 class="{{ classes|join(' ') }}"
-                href="{{ content_url(item.url) }}">
+		{% if item.type == 'node' -%}
+		  href="{{content_url(item.url) }}">
+		{% else -%}
+		  href="{{ item.url }}">
+		{%- endif %}		       
                 {{ item.name }}
             </a>
         </li>
