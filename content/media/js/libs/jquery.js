@@ -1,4 +1,4 @@
-/*!
+/*
  * jQuery JavaScript Library v1.7.1
  * http://jquery.com/
  *
@@ -3850,7 +3850,7 @@ jQuery.each( ("blur focus focusin focusout load resize scroll unload click dblcl
 
 
 
-/*!
+/*
  * Sizzle CSS Selector Engine
  *  Copyright 2011, The Dojo Foundation
  *  Released under the MIT, BSD, and GPL Licenses.
