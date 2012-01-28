@@ -1,0 +1,47 @@
+{% extends "base.j2" %}
+
+{% block main -%}
+
+<section class="hi">
+<h1 class="title">Welcome</h1>
+{% filter markdown|typogrify -%}
+   {% block hi -%}
+   {% endblock -%}
+{% endfilter -%}
+
+<a class="btn"
+    href="/about">Read more about me&hellip;</a>
+
+</section>
+
+
+
+{% from "macros.j2" import render_excerpt with context %}
+
+<section class="blog_excerpt">
+<h1 class="title">Lastest blog posts</h1>
+{% for res in resource.node.walk_resources()|sort(reverse=True,attribute="meta.created") %}
+	{% if res.meta.listable %}
+		{% if loop.index > 3 %}{% continue %}{% endif %}
+
+		{{ render_excerpt(res, 'post') }}
+
+		<a class="btn"
+		    href="{{ content_url(res.url) }}">Read more&hellip;</a>
+
+        {% endif %}
+{% endfor %}
+
+
+{#
+{% set latest = site.content.walk_resources_sorted_by_time()|first %}
+
+{% if latest -%}
+{{ render_excerpt(latest, 'post') }}
+#}
+
+
+{#{%- endif %}#}
+</section>
+
+{%- endblock %}

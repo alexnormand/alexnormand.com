@@ -1,20 +1,15 @@
 ---
-extends: base.j2
-default_block: main
-title: BASIC - A hyde website
-description: Home page for the BASIC hyde template
+extends: index.j2
+default_block: hi
+title: Alex Normand - Adventures in HTML5, CSS3, JavaScript and the open web
+description: Alex Normand's home page
 ---
 
-{% from "macros.j2" import render_excerpt with context %}
-<section class="blog_excerpt">
-{% set latest = site.content.walk_resources_sorted_by_time()|first %}
+Hi, I'm Alex Normand, a 22 year old  web developer located in Paris, France.  
+I'm currently an intern at [Crédit Agricole](http://www.credit-agricole.com/en) where I work as a web developer as part of my Master's degree.
+I'm a final year student at University Paris Sud 11 Orsay where I'm studying
+for a Master of science in computer science.
 
-{% if latest -%}
-{{ render_excerpt(latest, 'post') }}
 
-<a class="button white medium"
-    href="{{ content_url(latest.url) }}">Read more&hellip;</a>
 
-{%- endif %}
 
-</section>

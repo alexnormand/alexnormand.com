@@ -1,35 +1,44 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
     <meta charset="utf-8">
 
-  <title>BASIC - A hyde website</title>
-  <meta name="description" content="Home page for the BASIC hyde template">
+  <title>Alex Normand - Adventures in HTML5, CSS3, JavaScript and the open web</title>
+  <meta name="description" content="Alex Normand's home page">
   <meta name="author" content="Alex Normand">
 
 
-  <meta name="viewport" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
     <link rel="stylesheet" href="/media/css/site.css">
-  <link rel="stylesheet" href="/media/css/syntax.css">
+  <link rel="stylesheet" href="/media/css/emacs.css">
+
+  <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
   
-      </head>
+  
+  <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+    </head>
 <body id="index">
     <div id="container">
             <div id="main" role="main">
           <header class="banner clearfix">
-          <h1><a href="http://anormand.com">Alex Normand</a></h1>
-            <h3>anormand.com</h3>
-	                            <nav class=main_nav>
+          <h1><a href="http://alexnormand.com">Alex Normand</a></h1>
+            <h3>alexnormand.com</h3>          
+          </header>
+          <div id="mainmain">
+	                      <nav class=main_nav>
     <ul>
               
         <li>
             <a title="Home Page"
                 class=""
-                href="/index.html">
+                href="/">
                 Home
             </a>
         </li>      
@@ -50,50 +59,98 @@
         <li>
             <a title="About"
                 class=""
-                href="/about.html">
+                href="/about">
                 About Me
             </a>
         </li>    </ul>
 </nav>
-                      
-          </header>
-          <section class="content">	    
-          <section class="blog_excerpt">
+                    <section class="content">	    
+          <section class="hi">
+<h1 class="title">Welcome</h1>
+<p>Hi, I&#8217;m Alex Normand, a 22 year old  web developer located in Paris, France.<br />
+I&#8217;m currently an intern at <a href="http://www.credit-agricole.com/en">Crédit Agricole</a> where I work as a web developer as part of my Master&#8217;s degree.
+I&#8217;m a final year student at University Paris Sud 11 Orsay where I&#8217;m studying
+for a Master of science in computer&nbsp;science.</p><a class="btn"
+    href="/about">Read more about me&hellip;</a>
 
-<article class=post>
-<h3><a href="/blog/test-post.html">A Test Post</a></h3>
+</section>
+
+
+
+
+<section class="blog_excerpt">
+<h1 class="title">Lastest blog posts</h1>
+			
+		<article class=post>
+<h3><a href="/blog/video.html">video</a></h3>
 <p>Lady Malvern was a hearty, happy, healthy, overpowering sort of dashed female,
 not so very tall but making up for it by measuring about six feet from the
 <span class="caps">O.P.</span> to the Prompt&nbsp;Side.</p>
-<time datetime="2011-10-01">
-    Posted: Sat, 01 Oct 2011
+<time datetime="2011-12-18">
+    Posted: Sun, 18 Dec 2011
 </time>
 </article>
 
 
-<a class="button white medium"
-    href="/blog/test-post.html">Read more&hellip;</a>
-</section>
-          </section>
+		<a class="btn"
+		    href="/blog/video.html">Read more&hellip;</a>
+
+        			
+		<article class=post>
+<h3><a href="/blog/code.html">Save video</a></h3>
+<p>Lady Malvern was a hearty, happy, healthy, overpowering sort of dashed female,
+not so very tall but making up for it by measuring about six feet from the
+<span class="caps">O.P.</span> to the Prompt&nbsp;Side.</p>
+<time datetime="2011-12-02">
+    Posted: Fri, 02 Dec 2011
+</time>
+</article>
 
 
+		<a class="btn"
+		    href="/blog/code.html">Read more&hellip;</a>
+
+        			
+		<article class=post>
+<h3><a href="/blog/super-long-title-post.html">super long title post to test hyde static site generator</a></h3>
+<p>Lady Malvern was a hearty, happy, healthy, overpowering sort of dashed female,
+not so very tall but making up for it by measuring about six feet from the
+<span class="caps">O.P.</span> to the Prompt&nbsp;Side.</p>
+<time datetime="2011-11-26">
+    Posted: Sat, 26 Nov 2011
+</time>
+</article>
+
+
+		<a class="btn"
+		    href="/blog/super-long-title-post.html">Read more&hellip;</a>
+
+        																																				
+
+
+
+</section>          </section>
+
+      </div>
       </div>
       </div> <!--! end of #container -->
   <footer>
-      Powered by <a href="https://github.com/hyde/hyde">hyde</a>.
+      Powered by 
+          <a href="https://github.com/hyde/hyde">hyde</a> & 
+          <a href="http://code.google.com/appengine/" title="google app engine" >
+             <span id="appengine">google app engine</span>
+          </a>
   </footer>
-      <!-- Javascript at the bottom for fast page loading -->
-    <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.5.1.min.js">\x3C/script>')</script>
-  
     
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>                
+  
+<script type="text/javascript" src="http://cdn.sublimevideo.net/js/4o1c21f8.js"></script>
+ <script src="/media/js/s.js"></script>
+ <!--[if lt IE 9]>
+     <script async src="/media/js/libs/respond.min.js"></script>
+ <!endif]-->
 
-  <!--[if lt IE 7 ]>
-    <script src="js/libs/dd_belatedpng.js"></script>
-    <script>DD_belatedPNG.fix('img, .png_bg'); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
-  <![endif]-->
-
+    
       
   </body>
 </html>

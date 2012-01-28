@@ -1,0 +1,27 @@
+---
+title:  video
+description: >
+    Test. Laugh.
+created: !!timestamp '2011-12-18 10:00:00'
+tags:
+    - video
+    - thoughts
+
+---
+
+{% mark excerpt -%}
+
+Lady Malvern was a hearty, happy, healthy, overpowering sort of dashed female,
+not so very tall but making up for it by measuring about six feet from the
+O.P. to the Prompt Side.
+
+{%- endmark %}
+
+
+<video  class=vid controls width=730 height=453 >
+  <source src="{{ media_url('videos/out-20.mp4') }}" type="video/mp4" />
+  <source src="{{ media_url('videos/out-20.webm') }}" type="video/webm" />
+  <source src="{{ media_url('videos/out-20.ogv') }}" type="video/ogg" />
+</video>
+
+

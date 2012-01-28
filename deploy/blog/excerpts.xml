@@ -7,10 +7,73 @@
         <link href="/"/>
     
         
-    <updated>2011-11-19T21:21:02Z</updated>
+    <updated>2011-12-21T00:01:04Z</updated>
 
     <id>/blog/excerpts.xml/</id>
 
+            <entry>
+            <title type="html">video</title>
+            <author><name>Alex Normand</name></author>
+            <link href="/blog/video.html"/>
+            <updated>2011-12-18T10:00:00Z</updated>
+            <published>2011-12-18T10:00:00Z</published>
+            <id>/blog/video.html</id>
+                        <category   scheme="/blog/tags"
+                        term="video"
+                        label="Video" />
+                        <category   scheme="/blog/tags"
+                        term="thoughts"
+                        label="Thoughts" />
+            
+            <content type="html">
+                
+                &lt;p&gt;Lady Malvern was a hearty, happy, healthy, overpowering sort of dashed female,
+not so very tall but making up for it by measuring about six feet from the
+&lt;span class=&#34;caps&#34;&gt;O.P.&lt;/span&gt; to the Prompt&amp;nbsp;Side.&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">Save video</title>
+            <author><name>Alex Normand</name></author>
+            <link href="/blog/code.html"/>
+            <updated>2011-12-02T10:00:00Z</updated>
+            <published>2011-12-02T10:00:00Z</published>
+            <id>/blog/code.html</id>
+                        <category   scheme="/blog/tags"
+                        term="test"
+                        label="Test" />
+                        <category   scheme="/blog/tags"
+                        term="thoughts"
+                        label="Thoughts" />
+            
+            <content type="html">
+                
+                &lt;p&gt;Lady Malvern was a hearty, happy, healthy, overpowering sort of dashed female,
+not so very tall but making up for it by measuring about six feet from the
+&lt;span class=&#34;caps&#34;&gt;O.P.&lt;/span&gt; to the Prompt&amp;nbsp;Side.&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">super long title post to test hyde static site generator</title>
+            <author><name>Alex Normand</name></author>
+            <link href="/blog/super-long-title-post.html"/>
+            <updated>2011-11-26T10:00:00Z</updated>
+            <published>2011-11-26T10:00:00Z</published>
+            <id>/blog/super-long-title-post.html</id>
+                        <category   scheme="/blog/tags"
+                        term="test"
+                        label="Test" />
+                        <category   scheme="/blog/tags"
+                        term="thoughts"
+                        label="Thoughts" />
+                        <category   scheme="/blog/tags"
+                        term="super super long tag"
+                        label="Super Super Long Tag" />
+            
+            <content type="html">
+                
+                &lt;p&gt;Lady Malvern was a hearty, happy, healthy, overpowering sort of dashed female,
+not so very tall but making up for it by measuring about six feet from the
+&lt;span class=&#34;caps&#34;&gt;O.P.&lt;/span&gt; to the Prompt&amp;nbsp;Side.&lt;/p&gt;            </content>
+        </entry>
             <entry>
             <title type="html">A Test Post</title>
             <author><name>Alex Normand</name></author>

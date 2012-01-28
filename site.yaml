@@ -11,14 +11,14 @@ plugins:
     - hyde.ext.plugins.textlinks.TextlinksPlugin
 context:
     data:
-        tweet_via: ringce
+        tweet_via: normand_alex
         menu:
             -
                 name: Home
                 description: Home Page
                 css_class: home
-                type: page
-                url: index.html
+                type: node
+                url: /
             -
                 name: Projects
                 description: Projects
@@ -35,13 +35,16 @@ context:
                 name: About Me
                 description: About
                 css_class: about
-                type: page
-                url: about.html
+                type: node
+                url: about
 meta:
     nodemeta: meta.yaml
     created: !!timestamp 2010-01-01 00:00:00
     author: Alex Normand
     charset: utf-8
+    viewport: width=device-width, initial-scale=1.0
+    analytics:
+      - id: UA-27119715-3
 sorter:
     time:
         attr:
