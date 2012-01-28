@@ -67,12 +67,10 @@
   {% endblock content%}
   {% block js %}
 
-  {% block jquery %}
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>                
-  {% endblock jquery %}
+  {% block requirejs %}
+  <script  data-main="{{media_url('js/main') }}" src="{{ media_url('js/libs/require/require-1.0.4.js') }}"></script>                
+  {% endblock requirejs %}
 
-<script type="text/javascript" src="http://cdn.sublimevideo.net/js/4o1c21f8.js"></script>
- <script src="{{ media_url('js/s.js') }}"></script>
  <!--[if lt IE 9]>
      <script async src="{{ media_url('js/libs/respond.min.js') }}"></script>
  <!endif]-->
