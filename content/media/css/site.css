@@ -477,3 +477,18 @@ pre {
     }    
 }
 
+@media print {
+    body, a, footer  {
+       text-shadow: none;
+      }
+    
+    .banner h1, a {
+	color: DarkSlateGrey;
+    }
+
+    #mainmain {
+	-moz-box-shadow: none; /* FF3.5+ */
+	-webkit-box-shadow: none; /* Saf3.0+, Chrome */
+	box-shadow: none; /* Opera 10.5, IE 9.0 */
+    }    
+}
