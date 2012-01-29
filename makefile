@@ -42,10 +42,10 @@ copy-static-site: clean gen minify-js minify-css
 	@cp -r $(BUILD.DIR) $(APPFOLDER)/static
 	@echo SITE GENERATION COMPLETE
 
-serve: copy-static-site	
+serve:
 	@$(APPENGINEDEV) $(APPFOLDER)
 
-upload: copy-static-site	
+upload:
 	@$(APPENGINEUPLOAD) update $(APPFOLDER)
 
 
