@@ -5,6 +5,12 @@ define(['jquery'], function($) {
 
 	    updateMainContent: function (link) {  
 		$.get(link.href, function(data){ 
+
+		    if(window.location.host === 'www.alexnormand.com') {
+			_gaq.push(['_setAccount', 'UA-27119715-3']);
+			_gaq.push(['_trackPageview', link.href]);
+		    }
+
 		    $('section.content').replaceWith($(data).find('.content'))
 		    $('section.content').children()
                         .hide()
