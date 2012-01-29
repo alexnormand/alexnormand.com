@@ -1,4 +1,6 @@
 *~
 #*#
+content/media/images/*
+content/media/videos/*
 deploy/*
 appengine/static/*
