@@ -6,8 +6,7 @@ define(['jquery'], function($) {
 	    updateMainContent: function (link) {  
 		$.get(link.href, function(data){ 
 
-		    if(window.location.host === 'www.alexnormand.com') {
-			_gaq.push(['_setAccount', 'UA-27119715-3']);
+		    if(window.location.host === 'www.alexnormand.com') {			
 			_gaq.push(['_trackPageview', link.href]);
 		    }
 
