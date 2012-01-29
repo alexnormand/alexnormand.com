@@ -18,6 +18,8 @@
       <!--r.js optimization dir-->
       <property name="r.node" value="${user.home}/tools/r.js"/>
       <property name="app.build.js" value="${src.js.dir}/app-build.js" />
+      <!-- appengine folder -->
+      <property name="appengine.folder" value="${basedir}/appengine" />
       <!--Build version information -->
       <property name="build.major" value="1"/>
       <property name="build.minor" value="1"/>
@@ -80,6 +82,18 @@
 	    -hyde.gen,
             -js.concatenate,
             -css.minify">
+    </target>
+
+
+
+    <target name="copy.static.site"
+	    description="copies the ${build.dir} to appengine folder"
+	    depends="prod">
+      <delete dir="${basedir}appengine/static" />
+      <copy todir="${basedir}/appengine/static">
+	<fileset dir="${build.dir}" />
+      </copy>
+      <echo>Copied static site to app engine upload folder</echo>
     </target>
 </project>
 
