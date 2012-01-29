@@ -262,11 +262,11 @@ section.content {
 }
 
 .listing li p{
-    font-size: 13px;
-    line-height: 20px;
+    font-size: 14px;
+    line-height: 21px;
     margin-bottom: 5px;
-    color: #444;
-    font-family: verdana;
+    color: #333;
+    font-family: 'Droid Sans', Verdana;
 }
 
 
@@ -286,11 +286,11 @@ section.content {
 /* Content */
 
 article.post p, article.post ul{
-    font-family: Verdana;
-    font-size: 13px;
-    line-height: 21px;
+    font-family: 'Droid Sans', Verdana;
+    font-size: 14px;
+    line-height: 22px;
     margin: 20px 0;
-    color: #444;
+    color: #333;
 
 }
 
@@ -454,11 +454,11 @@ pre {
 }
 
 .hi p {
-    font-family: Verdana;
-    font-size: 13px;
+    font-family: 'Droid Sans', Verdana;
+    font-size: 14px;
     line-height: 21px;
     margin: 20px 0;
-    color: #444;
+    color: #333;
 }
 
 .hi a.btn {
