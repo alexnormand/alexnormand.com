@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <project name="alexnormand.com" default="prod" basedir=".">
 
-    <description>Client-side ANT build file for Teevee</description>
+    <description>alexnormand.com build file</description>
 
     <target name="-load.properties"
 	    description="Set properties for this build">
