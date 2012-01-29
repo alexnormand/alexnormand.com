@@ -1,16 +1,17 @@
 .PHONY = all, clean, gen, minify-js, minify-css, copy-static-site, serve, upload
 
 TOOLS = ~/tools
+YUI = $(TOOLS)/yuicompressor-2.4.7.jar
+REQUIREJS.OPTIMIZE= $(TOOLS)/r.js
+APPENGINEPATH = $(TOOLS)/google_appengine
+
+
 BUILD.DIR = deploy
 SRC.JS.DIR = content/media/js
 SRC.CSS.DIR = content/media/css
 
-YUI = $(TOOLS)/yuicompressor-2.4.7.jar
-REQUIREJS.OPTIMIZE= $(TOOLS)/r.js
 APP.BUILD.JS = $(SRC.JS.DIR)/app-build.js
 
-
-APPENGINEPATH = $(TOOLS)/google_appengine
 APPENGINEDEV = $(APPENGINEPATH)/dev_appserver.py
 APPENGINEUPLOAD = $(APPENGINEPATH)/appcfg.py
 
