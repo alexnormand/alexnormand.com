@@ -537,8 +537,8 @@ pre {
 .highlight .vg { color: #B8860B } /* Name.Variable.Global */
 .highlight .vi { color: #B8860B } /* Name.Variable.Instance */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
-
-.codebox figcaption, br { display:none;}
+.codebox figcaption, .codebox br { display:none;}
+.highlight br  { display: block }
 
 /*===============
    MEDIA QUERIES
