@@ -285,6 +285,12 @@ section.content {
 
 /* Content */
 
+
+article.post h2 {
+    margin: 30px 0 0 0;
+    color: #222;
+}
+
 article.post p, article.post ul{
     font-family: 'Droid Sans', Verdana;
     font-size: 14px;
@@ -445,10 +451,13 @@ a.btn:hover {
 
 
 pre {
-    font-size: .8em;
+    border-radius: 0.3em;
+    border: 1px solid #D6D6D6;
+    font-size: .9em;
     font-family: 'Inconsolata', monospace;
     overflow-x: auto;
     overflow-y: hidden;
+    padding: 0.4em;
     line-height: 100%;
     background-color: #F0F0F0;
 }
@@ -528,6 +537,8 @@ pre {
 .highlight .vg { color: #B8860B } /* Name.Variable.Global */
 .highlight .vi { color: #B8860B } /* Name.Variable.Instance */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
+
+.codebox figcaption, br { display:none;}
 
 /*===============
    MEDIA QUERIES
