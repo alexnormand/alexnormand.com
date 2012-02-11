@@ -1,0 +1,72 @@
+---
+title:  Installing node.js on Debian stable/testing via aptitude
+description: How to install node.js on Debian stable/testing via aptitude
+created: !!timestamp '2012-02-11 18:00:00'
+tags:
+    - nodejs
+    - debian
+    - aptitude   
+---
+
+When Installing node.js on Debian you have two options:
+
+   * Compiling it from [source](https://github.com/joyent/node) if you need the latest version of node.js
+   * Installing it the Debian Way using the [node.js package](http://packages.debian.org/sid/nodejs)
+ available in the official Debian Sid (unstable) repo.
+
+This post will describe how to install node.js from Debian's package manager.
+
+Step 1: adding the repo to /etc/apt/sources.list
+------------------------------------------------
+
+First of all, you need to add the Debian Sid (unstable) repo to your **/etc/apt/sources.list** file:
+
+{% syntax bash %}
+deb http://ftp.debian.org/debian/ unstable main contrib non-free
+{% endsyntax %}
+
+Step 2: Setting the aptitude's default Debian release in /etc/apt/apt.conf
+--------------------------------------------------------------------------
+Since we only want to install node.js from the Debian Sid (unstable) you must set 
+aptitude's default release. This will prevent all of your packages from being updated to their unstable version
+and therefore upgrading all of your system to Debian Sid (unstable),
+
+Create a **/etc/apt/apt.conf** file and add the following line :
+
+*If you're using testing*
+  {% syntax bash %}
+  APT:Default-Release "testing";
+  {% endsyntax %}
+*If you're using stable*
+  {% syntax bash %}
+  APT:Default-Release "stable";
+  {% endsyntax %}
+
+
+You may want to read about [apt-pinning](http://wiki.debian.org/AptPreferences) if you want to have more fine grained control
+over which packages you wish to install on your system.
+
+
+Step 3: Installing node.js from the package manager:
+----------------------------------------------------
+Then install the package the way you usually do, the only difference is the **-t** option
+which sets the release from which the package should be installed.
+  {% syntax bash %}
+$ aptitude update
+$ aptitude install -t unstable nodejs
+  {% endsyntax %}
+
+You may also want to install the popular [node package manager](http://npmjs.org/). Fortunately [npm](http://packages.debian.org/sid/npm) is also available in the Debian Sid repo, so you can install it easily:
+
+  {% syntax bash %}
+$ aptitude install -t unstable npm
+  {% endsyntax %}
+
+
+
+
+
+
+
+
+
