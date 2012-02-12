@@ -16,7 +16,7 @@ When Installing node.js on Debian you have two options:
 
 This post will describe how to install node.js from Debian's package manager.
 
-Step 1: adding the repo to /etc/apt/sources.list
+Step 1: Adding the repo to /etc/apt/sources.list
 ------------------------------------------------
 
 First of all, you need to add the Debian Sid (unstable) repo to your **/etc/apt/sources.list** file:
@@ -25,7 +25,7 @@ First of all, you need to add the Debian Sid (unstable) repo to your **/etc/apt/
 deb http://ftp.debian.org/debian/ unstable main contrib non-free
 {% endsyntax %}
 
-Step 2: Setting the aptitude's default Debian release in /etc/apt/apt.conf
+Step 2: Setting aptitude's default Debian release in /etc/apt/apt.conf
 --------------------------------------------------------------------------
 Since we only want to install node.js from the Debian Sid (unstable) you must set 
 aptitude's default release. This will prevent all of your packages from being updated to their unstable version
@@ -47,7 +47,7 @@ You may want to read about [apt-pinning](http://wiki.debian.org/AptPreferences) 
 over which packages you wish to install on your system.
 
 
-Step 3: Installing node.js from the package manager:
+Step 3: Installing node.js from the package manager
 ----------------------------------------------------
 Then install the package the way you usually do, the only difference is the **-t** option
 which sets the release from which the package should be installed.
