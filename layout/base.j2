@@ -23,6 +23,7 @@
 
   <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script async src="{{ media_url('js/libs/respond.min.js') }}"></script>
   <![endif]-->
 
   {% endblock headjs %}
@@ -66,10 +67,6 @@
   {% block requirejs %}
   <script  data-main="{{media_url('js/main') }}" src="{{ media_url('js/libs/require/require-1.0.4.js') }}"></script>                
   {% endblock requirejs %}
-
- <!--[if lt IE 9]>
-     <script async src="{{ media_url('js/libs/respond.min.js') }}"></script>
- <!endif]-->
 
   {% block scripts %}
   {% endblock scripts %}
