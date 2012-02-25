@@ -1,11 +1,10 @@
 ({
-    appDir: "./",
     baseUrl: "./",
+    out:"../../../deploy/media/js/main.js",    
     paths: {
 	order: 'libs/require/order',
 	jquery: 'libs/jquery',
 	site: 'site'
-
     },
     optimize: "uglify",
     modules: [

@@ -5,7 +5,6 @@ YUI = $(TOOLS)/yuicompressor-2.4.7.jar
 REQUIREJS.OPTIMIZE= $(TOOLS)/r.js
 APPENGINEPATH = $(TOOLS)/google_appengine
 
-
 BUILD.DIR = deploy
 SRC.JS.DIR = content/media/js
 SRC.CSS.DIR = content/media/css
@@ -28,11 +27,14 @@ gen:
 	@rm -rf $(BUILD.DIR)
 	hyde gen
 
+
 minify-js: 
+	rm -r $(BUILD.DIR)/media/js
+	mkdir -p $(BUILD.DIR)/media/js/libs/require
 	node $(REQUIREJS.OPTIMIZE) -o $(APP.BUILD.JS)\
-                                   dir=../../../$(BUILD.DIR)/media/js\
-                                   name=main\
-                                   out=../../../$(BUILD.DIR)/media/js/main.js
+				   findNestedDependencies=true\
+                                   name=main
+
 	@cp $(SRC.JS.DIR)/libs/require/require-1.0.4.js $(BUILD.DIR)/media/js/libs/require
 	@cp $(SRC.JS.DIR)/libs/respond.min.js $(BUILD.DIR)/media/js/libs
 
