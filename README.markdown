@@ -2,11 +2,11 @@ Requirements
 ------------
 In order to build and test this website you will need the following tools
 
-   * hyde
-   * Google App Engine SDK
-   * yuicompressor
-   * RequireJS optimization tool
-   * nodejs
+   * [hyde](https://github.com/hyde/hyde)
+   * [Google App Engine SDK](http://code.google.com/appengine/downloads.html)
+   * [yuicompressor](http://developer.yahoo.com/yui/compressor/)
+   * [RequireJS optimization tool](http://requirejs.org/docs/optimization.html)
+   * [nodejs](http://nodejs.org/)
 
 Configuring the makefile
 ----------------------------
@@ -22,8 +22,8 @@ You must set the right execution paths to run all the tools mentioned above.
 
 Then simply type:
 
-   * `make`
-   * `make serve`
+    $ make
+    $ make serve
 
 
 
