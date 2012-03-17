@@ -16,9 +16,20 @@ define(['jquery'], function($) {
                         .fadeIn(500);
 
 		    $(window).scrollTop(0); //for mobile browsers                                
-		    $('title').text($(data).filter('title').text()) //set new page title
-
+		    $('title').text($(data).filter('title').text()); //set new page title
+		    
 		    site.mainContent = $('.content');
+
+		    //Disqus
+		    if($('#disqus_thread').length) {
+			var disqus_shortname = 'alexnormand';
+			var dsq = document.createElement('script');
+			dsq.async = true;
+			dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		    }
+
+
 		    /*$('.vid').each(function(index, element){		   
 		      site.prepareVideo(element);
 		      });*/		
