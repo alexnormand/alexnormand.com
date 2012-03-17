@@ -20,6 +20,9 @@ define(['jquery'], function($) {
 		    
 		    site.mainContent = $('.content');
 
+		    //remove old iframes inserted by disqus
+		    $('iframe[name^="easyXDM_DISQUS"]').remove();
+
 		    //Disqus
 		    if($('#disqus_thread').length) {
 			var disqus_shortname = 'alexnormand';
