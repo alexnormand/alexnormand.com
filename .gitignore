@@ -4,3 +4,4 @@ content/media/images/*
 content/media/videos/*
 deploy/*
 appengine/static/*
+.hyde_deps
