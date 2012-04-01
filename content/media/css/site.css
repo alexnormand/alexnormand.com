@@ -308,6 +308,7 @@ article.post ul {
 article.post img{
     display: block;
     margin-bottom: 24px;
+    box-shadow: 3px 3px 13px #444;
 }
 
 .post time{
