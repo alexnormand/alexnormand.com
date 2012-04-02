@@ -430,13 +430,13 @@ nav.main_nav li {
 }
 
 ::selection {
-    background: #497CA6;
+    background: #B51;
     color: #EDEDED;
     text-shadow: none;
 }
 
 ::-moz-selection {
-    background: #497CA6;
+    background: #B51;
     color: #EDEDED;
     text-shadow: none;
 }
