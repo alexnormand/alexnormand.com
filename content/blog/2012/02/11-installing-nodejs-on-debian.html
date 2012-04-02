@@ -27,9 +27,10 @@ deb http://ftp.debian.org/debian/ unstable main contrib non-free
 
 Step 2: Setting aptitude's default Debian release in /etc/apt/apt.conf
 --------------------------------------------------------------------------
-Since we only want to install node.js from the Debian Sid (unstable) you must set 
-aptitude's default release. This will prevent all of your packages from being updated to their unstable version
-and therefore upgrading all of your system to Debian Sid (unstable),
+Since [node.js](http://packages.debian.org/sid/nodejs) is the only package you 
+want to install from the Debian Sid (unstable) repo, you must set aptitude's 
+default release. This will prevent all of your packages from being updated to
+the unstable version, and therefore prevent upgrading all of your system to Debian Sid (unstable).
 
 Create a **/etc/apt/apt.conf** file and add the following line :
 
