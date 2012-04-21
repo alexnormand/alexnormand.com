@@ -57,10 +57,12 @@ $ aptitude update
 $ aptitude install -t unstable nodejs
   {% endsyntax %}
 
-You may also want to install the popular [node package manager](http://npmjs.org/). Fortunately [npm](http://packages.debian.org/sid/npm) is also available in the Debian Sid repo, so you can install it easily:
+You may also want to install  [npm](http://npmjs.org/). 
+Although there is an available debian [package](http://packages.debian.org/sid/npm) in the Debian Sid repo, I recommend
+installing it the "official" way:
 
   {% syntax bash %}
-$ aptitude install -t unstable npm
+$ curl http://npmjs.org/install.sh | sh
   {% endsyntax %}
 
 
