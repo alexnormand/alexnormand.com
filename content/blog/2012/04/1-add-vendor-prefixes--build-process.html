@@ -25,14 +25,15 @@ the [web](http://www.glazman.org/weblog/dotclear/index.php?post/2011/11/16/CSS-v
 
 Currently, the most popular and preferred method to automatically handle vendor prefixes effortlessly is to work with CSS preprocessors
 like [SASS](http://sass-lang.com/), [LESS](http://lesscss.org/) & [Stylus](http://learnboost.github.com/stylus/).
-Yet many Developers don't bother using/learning these tools.
+Yet many Developers don't bother using and/or learning these tools.
 You should definitely consider using these tools as they will save you time and hassle.
 Dealing with all [variants](http://peter.sh/experiments/vendor-prefixed-css-property-overview/) 
 of implemented CSS3 properties by hand can be a time-consuming, error-prone and repetitve task.
 
 
 In this post, I'll show you how you can easily and automatically add missing vendor prefixes in you css files
-during your build process using [ant](http://ant.apache.org/) or [make](http://www.gnu.org/software/make/manual/make.html).
+during your build process using [ant](http://ant.apache.org/) (or [make](http://www.gnu.org/software/make/manual/make.html))
+and [prefixr](http://prefixr.com/).
 This will ensure that all prefixes are automatically included in your builds.
 
 
@@ -49,13 +50,18 @@ box-shadow, border-radius, gradients, transitions,...
 <img src="http://farm8.staticflickr.com/7085/6890313356_0e98c7ab0a.jpg" width="486" height="500" alt="alexnormand-demo-imdb-display-result-screenshot">
 
 
-<hr>
+We'll use the [prefixr api](http://www.prefixr.com/api/usage/) on the command line to add any missing vendor-prefixed property:
 
-We'll use [prefixr](http://prefixr.com/) to add any missing vendor-prefixed property.
+{% syntax bash %}
+$ curl -sSd css="$(cat path/to/style.css)" http://prefixr.com/api/index.php -o /path/to/output/style.css
+{% endsyntax %}
+
+<br />
+
 
 Here's the simplified ant build file which passes the contents of the **style.css** 
 file to the css parameter and makes a POST request to **http://prefixr.com/api/index.php**
-with cURL:
+
 {% syntax xml %}
     <target>
         <!--Source CSS dir-->
