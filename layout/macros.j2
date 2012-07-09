@@ -41,3 +41,23 @@
 </nav>
 {%- endif %}
 {%- endmacro %}
+
+
+
+{% macro render_mobile_nav(menu, cls=None) -%}
+{% if menu -%}
+
+<select {{ 'class='~cls if cls }}>
+  {% for item in menu -%}
+  <option 
+     {% if item.type == 'node' -%}
+       value="{{content_url(item.url) }}">
+     {% else -%}
+       value="{{ item.url }}">
+     {%- endif %}		            
+    {{ item.name }}
+  </option>
+  {%- endfor %}
+</select>
+{%- endif %}      
+{%- endmacro %}

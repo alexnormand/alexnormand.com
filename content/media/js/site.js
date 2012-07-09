@@ -1,23 +1,23 @@
 define(['jquery'], function($) {
-	var site  = {	
+	var site  = {
 
-	    mainContent: undefined,	
+	    mainContent: undefined,
 
-	    updateMainContent: function (link) {  
-		$.get(link.href, function(data){ 
+	    updateMainContent: function (link) {
+		$.get(link.href, function(data){
 
-		    if(window.location.host === 'www.alexnormand.com') {			
+		    if(window.location.host === 'www.alexnormand.com') {
 			_gaq.push(['_trackPageview', link.href]);
 		    }
 
-		    $('section.content').replaceWith($(data).find('.content'))
+		    $('section.content').replaceWith($(data).find('.content'));
 		    $('section.content').children()
                         .hide()
                         .fadeIn(500);
 
-		    $(window).scrollTop(0); //for mobile browsers                                
+		    $(window).scrollTop(0); //for mobile browsers
 		    $('title').text($(data).filter('title').text()); //set new page title
-		    
+
 		    site.mainContent = $('.content');
 
 		    //remove old iframes inserted by disqus
@@ -33,11 +33,11 @@ define(['jquery'], function($) {
 		    }
 
 
-		    /*$('.vid').each(function(index, element){		   
+		    /*$('.vid').each(function(index, element){
 		      site.prepareVideo(element);
-		      });*/		
-		});      
-	    },  
+		      });*/
+		});
+	    },
 
 	    /*
 	      prepareVideo: function(element) {
@@ -46,20 +46,20 @@ define(['jquery'], function($) {
 	      },
 
 	      resizeVideo: function(element) {
-	      var width = site.mainContent.width();		
-	      sublimevideo.resize(element, width, width / 1.57667);			    
+	      var width = site.mainContent.width();
+	      sublimevideo.resize(element, width, width / 1.57667);
 	      },*/
 
 	    init: function() {
-		
+
 		site.mainContent = $('.content');
-		//sublimevideo.load();	
+		//sublimevideo.load();
 
 		if(!!(window.history && history.pushState)) {
-		    $('#mainmain').on('click', 'a', function(e){  
-			var link = e.target;    
-			if(link.host === window.location.host) { 
-			    site.updateMainContent(link);	
+		    $('#mainmain').on('click', 'a', function(e){
+			var link = e.target;
+			if(link.host === window.location.host) {
+			    site.updateMainContent(link);
 
 			    /*$('.vid').each(function(index, element){
 			      site.prepareVideo(element);
@@ -69,25 +69,40 @@ define(['jquery'], function($) {
 			    e.preventDefault();
 			}
 		    });
-		    
+
 		    window.setTimeout(function() {
 			$(window).bind('popstate', function(e) {
 			    site.updateMainContent(window.location);
-			});     
-		    }, 1000);      		
+			});
+		    }, 1000);
 		}
-		
+
+
+		$('select.main_nav').change(function() {
+		    var option = $(this).find(':selected');
+
+		    option.prop('selected', true);
+
+		    if (option.val().indexOf('/') === 0) {
+			site.updateMainContent({href: option.val()});
+		    } else {
+			window.location = option.val();
+		    }
+
+		});
+
+
 		/*$(window).resize(function(){
 		  $('.vid').each(function(index, element){
 		  site.resizeVideo(element);
 		  });
 		  });
 
-		  sublimevideo.ready(function() {				
+		  sublimevideo.ready(function() {
 		  $('.vid').each(function(index, element){
 		  site.prepareVideo(element);
 		  });
-		  });*/	   
+		  });*/
 	    }
 	};
 
