@@ -1,48 +1,37 @@
-.PHONY = all, clean, gen, minify-js, minify-css, copy-static-site, serve, upload
+.PHONY = all, clean, build, minify-js, minify-css, build-static-site, serve, upload
 
-TOOLS = ~/tools
-YUI = $(TOOLS)/yuicompressor-2.4.7.jar
-REQUIREJS.OPTIMIZE= $(TOOLS)/r.js
-APPENGINEPATH = $(TOOLS)/google_appengine
-
-BUILD.DIR = deploy
-SRC.JS.DIR = content/media/js
-SRC.CSS.DIR = content/media/css
-
-APP.BUILD.JS = $(SRC.JS.DIR)/app-build.js
-
+BUILD.DIR = build
+APPFOLDER = appengine
+APPENGINEPATH = ~/tools/google_appengine
 APPENGINEDEV = $(APPENGINEPATH)/dev_appserver.py
 APPENGINEUPLOAD = $(APPENGINEPATH)/appcfg.py
 
-APPFOLDER = appengine
+BUILD.MAIN.JS = $(BUILD.DIR)/js/main.js
+APPENGINE.MAIN.JS = $(APPFOLDER)/static/js/main.js
+NO.COPYRIGHT := `tail -n +$$(sed -n '/(function/=' $(BUILD.MAIN.JS)) $(BUILD.MAIN.JS) > $(APPENGINE.MAIN.JS)`
 
-
-all : copy-static-site
+all : build-static-site
 
 clean:
 	@rm -rf $(APPFOLDER)/static
 	@rm -rf $(BUILD.DIR)
 
-gen:
+build:
 	@rm -rf $(BUILD.DIR)
-	hyde gen
+	wintersmith build
 
+minify-js:
+	node $(BUILD.DIR)/js/libs/require/r.js -o $(BUILD.DIR)/js/app-build.js
 
-minify-js: 
-	rm -r $(BUILD.DIR)/media/js
-	mkdir -p $(BUILD.DIR)/media/js/libs/require
-	node $(REQUIREJS.OPTIMIZE) -o $(APP.BUILD.JS)\
-				   findNestedDependencies=true\
-                                   name=main
-
-	@cp $(SRC.JS.DIR)/libs/require/require-1.0.4.js $(BUILD.DIR)/media/js/libs/require
-	@cp $(SRC.JS.DIR)/libs/respond.min.js $(BUILD.DIR)/media/js/libs
 
 minify-css:
-	java -jar $(YUI) -o $(BUILD.DIR)/media/css/site.css $(SRC.CSS.DIR)/site.css
+	node $(BUILD.DIR)/js/libs/require/r.js -o cssIn=$(BUILD.DIR)/css/site.css out=$(BUILD.DIR)/css/site.css optimizeCss=standard
 
-copy-static-site: clean gen minify-js minify-css
+build-static-site: clean build minify-js minify-css
 	@cp -r $(BUILD.DIR) $(APPFOLDER)/static
+	@rm -rf $(APPFOLDER)/static/js/*
+	@cp $(BUILD.MAIN.JS) $(APPENGINE.MAIN.JS)
+	@${NO.COPYRIGHT}
 	@echo SITE GENERATION COMPLETE
 
 serve:
@@ -50,5 +39,4 @@ serve:
 
 upload:
 	@$(APPENGINEUPLOAD) update $(APPFOLDER)
-
 

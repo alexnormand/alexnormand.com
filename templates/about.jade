@@ -1,0 +1,11 @@
+extends layout
+
+block title
+  #{locals.owner} - #{ page.title }
+
+
+block main
+  article.post
+    h1.title= page.title
+    != page.html
+    

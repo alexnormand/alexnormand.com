@@ -1,0 +1,41 @@
+extends layout
+
+block page-description
+  meta(name='description', content=locals.name)
+
+
+block main
+  include datetime
+  section.hi
+    h1.title Welcome
+    != page.html
+  section.blog_excerpt
+    h1.title Latest blog posts
+
+    //- underscore helps us filter and sort our articles
+    - var articles = [];
+    - _.each(contents.blog._.directories, function(year) {
+    -   _.each(year._.directories, function(month) {
+    -     _.each(month._.directories, function(post) {
+    -       articles.push(post.index)
+    -     });
+    -   });
+    - });
+    - articles = _.chain(articles).compact().sortBy(function(item) { // compact removes any directories w/o an index
+    -   // sort them by date
+    -   return -item.date
+    - }).first(3).value() // and finally take the first 3
+    each article in articles
+      article.post
+        header
+          h3
+            a(href=article.url)= article.title
+          mixin datetime(article.date)  
+        p.content!= article.intro
+        if article.hasMore
+          p.read-more
+            a(href=article.url) read more
+
+
+
+    

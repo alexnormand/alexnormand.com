@@ -1,0 +1,42 @@
+
+extends layout
+
+
+block title 
+  #{locals.owner} - Archive
+
+block main
+  != page.html
+  - var archive = [];
+  - _.each(contents.blog._.directories, function(year) {
+  -   _.each(year._.directories, function(month) {
+  -     _.each(month._.directories, function(post) {
+  -       archive.push(post.index)
+  -     });
+  -   });
+  - });
+  - archive = _.chain(archive).compact().sortBy(function(item) {
+  -   return -item.date
+  - }).groupBy(function(item) {
+  -   return item.date.getFullYear()
+  - }).value()
+  - var map = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+  section.archive
+    h1.title
+      | Archive
+    ul
+      each year in _.chain(archive).keys().reverse().value()
+        li.year
+          h2 
+            | #{year}
+          - var months = _.groupBy(archive[year], function(item) { return map[item.date.getMonth()] })
+          ul
+            each articles, month in months
+              li
+                strong= month
+                ul
+                  each article in articles
+                    li                    
+                      a(href=article.url)= article.title
+                    

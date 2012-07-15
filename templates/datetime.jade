@@ -1,0 +1,6 @@
+mixin datetime(date)
+  - var d = new Date(Date.parse(date))       
+  - var addZero = function(n){return n < 10 ? '0'+n : n}
+  - var datetime = [d.getFullYear(), addZero(d.getMonth()+1), addZero(d.getDate())].join('-')
+  time(datetime=datetime)
+            |Posted: #{new Date(Date.parse(date)).toDateString()}

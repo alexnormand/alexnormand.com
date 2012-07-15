@@ -1,0 +1,18 @@
+extends layout
+
+block page-description
+  meta(name='description', content=page.metadata.description)
+
+
+block title
+  #{locals.owner} - #{ page.title }
+
+block main
+  include datetime
+  article.post
+    header
+      h1.title 
+        a(href=page.url)
+          #{page.title}
+      mixin datetime(page.date)
+    != page.html

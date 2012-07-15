@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Alex Normand - Automatically Add Vendor Prefixes During Your Build Process</title>
+    <meta name="author" content="Alex Normand">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="LjoyQzPO6GNPYkjT8aMpI_vsxY7N2iW3Jqet5mkPveY">
+    <meta name="description" content="Automatically Add Vendor Prefixes During Your Build Process using ant and prefixr">
+    <link rel="stylesheet" href="/css/site.css">
+    <link href="http://fonts.googleapis.com/css?family=Inconsolata|Droid+Sans" rel="stylesheet" type="text/css">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="alternate" href="http://localhost:8080/feed.xml" type="application/rss+xml" title="Alex Normand"><!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script defer src="js/libs/respond.min.js"></script><![endif]-->
+  </head>
+  <body>
+    <div id="container">
+      <div id="main" role="main">
+        <header class="banner clearfix">
+          <h1><a href="/">Alex Normand</a></h1>
+          <h3>alexnormand.com</h3>
+        </header>
+        <select class="main_nav">
+          <option value="/">Home</option>
+          <option value="https://github.com/alexnormand">Github</option>
+          <option value="/blog">Blog</option>
+          <option value="/about">About</option>
+        </select>
+        <div id="mainmain">
+          <nav class="main_nav">
+            <ul>
+              <li><a href="/" title="Home Page">Home</a></li>
+              <li><a href="https://github.com/alexnormand" title="My Gihub profile">Github</a></li>
+              <li><a href="/blog" title="Blog">Blog</a></li>
+              <li><a href="/about" title="About ">About</a></li>
+            </ul>
+          </nav>
+          <section class="content">
+            <article class="post">
+              <header>
+                <h1 class="title"> <a href="/blog/2012/04/1-add-vendor-prefixes--build-process/">Automatically Add Vendor Prefixes During Your Build Process</a></h1>
+                            <time datetime="2012-04-01">Posted: Sun Apr 01 2012</time>
+              </header><p>Several months ago, the CSS working group discussed the issue of the <strong>-webkit</strong> prefix monopoly and the fact
+that developers usually don&apos;t bother adding other prefixes.
+As a result, browser vendors considered using <strong>-webkit</strong> as the only vendor prefix and thus
+dropping their own prefixes (ie: -moz, -o, -ms,...).
+This suggestion caused an uproar <a href="http://lea.verou.me/2012/02/vendor-prefixes-the-css-wg-and-me/">in</a>
+the <a href="http://www.glazman.org/weblog/dotclear/index.php?post/2011/11/16/CSS-vendor-prefixes-an-answer-to-Henri-Sivonen">web</a> 
+<a href="http://remysharp.com/2012/02/09/vendor-prefixes-about-to-go-south/">community</a>.
+
+</p>
+<p><span class="more"></span>
+
+
+</p>
+<p>Currently, the most popular and preferred method to automatically handle vendor prefixes effortlessly is to work with CSS preprocessors
+like <a href="http://sass-lang.com/">SASS</a>, <a href="http://lesscss.org/">LESS</a> &amp; <a href="http://learnboost.github.com/stylus/">Stylus</a>.
+Yet many Developers don&apos;t bother using and/or learning these tools.
+You should definitely consider using these tools as they will save you time and hassle.
+Dealing with all <a href="http://peter.sh/experiments/vendor-prefixed-css-property-overview/">variants</a> 
+of implemented CSS3 properties by hand can be a time-consuming, error-prone and repetitve task.
+
+
+</p>
+<p>In this post, I&apos;ll show you how you can easily and automatically add missing vendor prefixes in you css files
+during your build process using <a href="http://ant.apache.org/">ant</a> (or <a href="http://www.gnu.org/software/make/manual/make.html">make</a>)
+and <a href="http://prefixr.com/">prefixr</a>.
+This will ensure that all prefixes are automatically included in your builds.
+
+
+</p>
+<h2>Our sample project</h2>
+<p>The sample project we&apos;ll be working with is available at 
+<a href="http://alexnormand.github.com/demos/2012/03/31/build/">http://alexnormand.github.com/demos/2012/03/31/build/</a>,
+you can also check out the <a href="https://github.com/alexnormand/demos/tree/gh-pages/2012/03/31">source code</a> if you wish.
+This simple web page queries imdb using the <a href="http://www.imdbapi.com/">imdb api</a> via a JSONP request.
+The response is then simply printed on the web page. The CSS stylesheet uses several CSS3 properties such as
+box-shadow, border-radius, gradients, transitions,...
+
+</p>
+<p><img src="http://farm8.staticflickr.com/7077/6890313350_4b2b2932e6.jpg" width="500" height="217" alt="alexnormand-demo-imdb-search-box-screenshot">
+<img src="http://farm8.staticflickr.com/7085/6890313356_0e98c7ab0a.jpg" width="486" height="500" alt="alexnormand-demo-imdb-display-result-screenshot">
+
+
+</p>
+<p>We&apos;ll use the <a href="http://www.prefixr.com/api/usage/">prefixr api</a> on the command line to add any missing vendor-prefixed property:
+
+</p>
+<p>{% syntax bash %}
+$ curl -sSd css=&quot;$(cat path/to/style.css)&quot; <a href="http://prefixr.com/api/index.php">http://prefixr.com/api/index.php</a> -o /path/to/output/style.css
+{% endsyntax %}
+
+</p>
+<p><br />
+
+
+</p>
+<p>Here&apos;s the simplified ant build file which passes the contents of the <strong>style.css</strong> 
+file to the css parameter and makes a POST request to <strong><a href="http://prefixr.com/api/index.php">http://prefixr.com/api/index.php</a></strong>
+
+</p>
+<pre><code class="xml">    &lt;target>
+        &lt;!--Source CSS dir-->
+        &lt;property name=<span class="string">"src.css.dir"</span> value=<span class="string">"${basedir}/css"</span>/>
+        &lt;!-- Prefixr URL -->
+        &lt;property name=<span class="string">"prefixr.url"</span> value=<span class="string">"http://prefixr.com/api/index.php"</span> />
+        &lt;!--Output dir-->
+        &lt;property name=<span class="string">"build.dir"</span> value=<span class="string">"../build"</span>/>
+    &lt;/target>
+
+    &lt;!-- Add missing vendor prefixes -->
+    &lt;target name=<span class="string">"-prefixr"</span>
+            description=<span class="string">"Adds missing vendor prefixes to css files"</span> >
+      &lt;loadfile property=<span class="string">"build.style.css"</span> srcFile=<span class="string">"${src.css.dir}/style.css"</span> />
+      &lt;exec executable=<span class="string">"curl"</span> failonerror=<span class="string">"true"</span> output=<span class="string">"${build.dir}/css/style.css"</span>>
+         &lt;arg line=<span class="string">'-sSd css="${build.style.css}"  ${prefixr.url}'</span>/>
+      &lt;/exec>
+      &lt;<span class="keyword">echo</span>>Added missing vendor prefixes to stylesheets&lt;/<span class="keyword">echo</span>>
+    &lt;/target>
+&lt;/project></code></pre>
+<p>Here&apos;s the makefile version:
+</p>
+<pre><code class="makefile">.PHONY = all, clean, copy, gen
+
+SRC   = src
+BUILD = build
+BUILD.STYLE.CSS = $(BUILD)/css/style.css
+TOOLS = ~/tools
+
+HTMLCOMPRESSOR = $(TOOLS)/htmlcompressor-<span class="number">1.5</span>.<span class="number">2</span>.jar
+YUICOMPRESSOR  = $(TOOLS)/yuicompressor-<span class="number">2.4</span>.<span class="number">7</span>.jar
+PREFIXR        = http:<span class="comment">//prefixr.com/api/index.php</span>
+
+all :  clean gen
+
+clean:
+        rm -rf $(BUILD)
+
+copy:
+        mkdir -p $(BUILD)/css
+        cp $(SRC)/css/style.css $(BUILD)/css
+
+gen: copy
+        java -jar $(HTMLCOMPRESSOR) -o $(BUILD)/index.html --compress-js --compress-css $(SRC)/index.html
+        @curl -sSd css=<span class="string">"$(shell cat $(BUILD.STYLE.CSS))"</span> $(PREFIXR) -o $(BUILD.STYLE.CSS)
+        @<span class="keyword">echo</span> Added Missing Vendor prefixes to stylesheets
+        java -jar $(YUICOMPRESSOR) -o $(BUILD.STYLE.CSS) $(BUILD.STYLE.CSS)</code></pre>
+<p>The sample project uses <a href="http://code.google.com/p/htmlcompressor/">htmlcompressor</a> for html minification, 
+<a href="http://prefixr.com/">prefixr</a> for automatic vendor prefix inclusion.
+<a href="http://developer.yahoo.com/yui/compressor/">yuicompressor</a> for css minification.
+You can view source code at <a href="https://github.com/alexnormand/demos/tree/gh-pages/2012/03/31">https://github.com/alexnormand/demos/tree/gh-pages/2012/03/31</a>
+
+
+</p>
+<h2>Building the project</h2>
+<p>To build the project simply run
+</p>
+<pre><code class="bash">$ ant</code></pre>
+<p>or 
+</p>
+<pre><code class="bash">$ make</code></pre>
+<p>This will generate a production release in the <strong>build</strong> folder with all the vendor prefixes automatically added.
+And that&apos;s it! You won&apos;t need to worry about prefixes anymore when releasing your projects.
+You should never have to hand code vendor prefixes ever again, you should <em>always</em> use tools to handle this tedious
+task whether you choose to use CSS preprocessors, client-side solutions, or tools like prefixr.
+
+
+</p>
+<h2>Further reading</h2>
+<ul>
+<li><a href="http://paulirish.com/2012/vendor-prefixes-are-not-developer-friendly/">http://paulirish.com/2012/vendor-prefixes-are-not-developer-friendly/</a></li>
+<li><a href="http://css-tricks.com/tldr-on-vendor-prefix-drama/">http://css-tricks.com/tldr-on-vendor-prefix-drama/</a></li>
+<li><a href="http://christianheilmann.com/2012/02/09/now-vendor-prefixes-have-become-a-problem-want-to-help-fix-it/">http://christianheilmann.com/2012/02/09/now-vendor-prefixes-have-become-a-problem-want-to-help-fix-it/</a></li>
+<li><a href="http://infrequently.org/2012/02/misdirection/">http://infrequently.org/2012/02/misdirection/</a></li>
+<li>An alternative to prefixr: <a href="http://cssprefixer.appspot.com/">cssprefixer</a></li>
+<li><a href="http://css3please.com/">css3please</a> by Paul Irish</li>
+<li><a href="http://leaverou.github.com/prefixfree/">prefixfree</a> by Lea Verou</li>
+<li><a href="http://addyosmani.com/blog/client-side-build-process/">http://addyosmani.com/blog/client-side-build-process/</a></li>
+</ul>
+
+            </article>
+          </section>
+        </div>
+      </div>
+    </div>
+    <footer>Powered By <a href="http://jnordberg.github.com/wintersmith/">Wintersmith </a>& <a href="http://code.google.com/appengine/" title="Google App Engine"><span id="appengine">Google App Engine</span></a></footer>
+    <script>
+      var _gaq=[['_setAccount','UA-27119715-3'],['_trackPageview']];(function(d,t){var g=d.createElement(t),m=d.createElement(t),s=d.getElementsByTagName(t)[0];g.src='//www.google-analytics.com/ga.js';m.src='/js/main.js';s.parentNode.insertBefore(g,s);s.parentNode.insertBefore(m,s)}(document,'script'))
+      
+    </script>
+  </body>
+</html>
