@@ -1,7 +1,7 @@
 {
   "locals": {
     "mode": "prod",
-    "url": "http://localhost:8080",
+    "url": "http://www.alexnormand.com",
     "name": "Alex Normand - Adventures in HTML5, CSS3, JavaScript and the open Web",
     "owner": "Alex Normand",
     "description": "Alex Normand",
