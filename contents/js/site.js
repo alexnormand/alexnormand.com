@@ -71,8 +71,8 @@ define(['jquery', 'hljs'], function($, hljs) {
 
 		});
 
-
                 //init highlight.js
+                hljs.tabReplace = '  ';
                 hljs.initHighlighting();
 	    }
 	};

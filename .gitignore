@@ -2,6 +2,6 @@
 #*#
 content/media/images/*
 content/media/videos/*
-deploy/*
+build/*
 appengine/static/*
 .hyde_deps
