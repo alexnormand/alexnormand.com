@@ -9,8 +9,8 @@ In order to build and test this website you will need the following tools
 Installing Wintersmith
 ----------------------
 
-   $ npm install wintersmith -g
-   $ npm install wintersmith-stylus -g
+    $ npm install wintersmith -g
+    $ npm install wintersmith-stylus -g
 
 Configuring the makefile
 ----------------------------
