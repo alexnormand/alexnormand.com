@@ -16,9 +16,9 @@ Configuring the makefile
 ----------------------------
 You should only have to edit the following variables:
 
-   APPENGINEPATH
-   APPENGINEDEV 
-   APPENGINEUPLOAD
+    APPENGINEPATH
+    APPENGINEDEV 
+    APPENGINEUPLOAD
 
 
 Then simply type:
