@@ -22,7 +22,7 @@ popular static site generator (SSG) and powers [Github pages](http://pages.githu
 
 Despite this, I chose Jekyll's evil twin [Hyde](https://github.com/hyde/hyde/) which looked like an elegant and cool alternative.
 At first Hyde was quite easy to use and play around with up for a newcomer like myself.
-However, one of Hyde's biggest drawback is its documentation.
+However, one of Hyde's biggest drawback was (and still is) its documentation.
 As a result finding information was quite hard, and I mainly built the first
 version of this site by looking at other Hyde powered sites, namely
 http://michealgrosner.com and http://vincent.bernat.im.
@@ -35,7 +35,7 @@ Wintersmith
 -----------
 
 I started looking for simpler alternatives and was pleasantly surprised to find out that there
-were [several](http://blog.bmannconsulting.com/node-static-site-generators/) SSGs written as node.js modules.
+were [several](http://blog.bmannconsulting.com/node-static-site-generators/) node.js based SSGs.
 I decided to try [Wintersmith](http://jnordberg.github.com/wintersmith/).
 Here are my favorite Wintersmith features:
 
@@ -114,8 +114,8 @@ $ wintersmith build
 this will generate a static version of your site in a **build** folder 
 ready to be uploaded to any web server.
 
-Wintermsith is a promising project and is actively developed by [Johan Nordberg](http://johan-nordberg.com/).
-It is a flexible, fast and easy to use static site generator.
+Wintermsith is a promising project and is being actively developed by [Johan Nordberg](http://johan-nordberg.com/).
+It is a flexible, fast and easy to use static site generator and I highly recommend it.
 
 At the time of writing, I haven't come across any other website powered by Wintersmith,
 so feel free to [fork this site](https://github.com/alexnormand/alexnormand.com) on Github.
