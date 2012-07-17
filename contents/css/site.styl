@@ -9,7 +9,6 @@
   margin: 0
 
 
-
 article,aside,details,figcaption,figure,
 footer,header,hgroup,menu,nav,section
   display:block
@@ -27,12 +26,13 @@ table
   border: 0
 
 
-.content a 
-  text-decoration: none
+.content 
+  a 
+    text-decoration: none
 
-
-.content p a:hover
-  text-decoration: underline
+  p 
+    a:hover
+      text-decoration: underline
 
 
 
@@ -45,18 +45,18 @@ a
   -ms-transition: color ease-in-out .5s
 
 
-a:hover
-  color:#CD3B16
+  &:hover
+    color:#CD3B16
 
 
-a:active
+  &:active
     outline: 0
     position: relative
     top: 1px
 
 
 body
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  font-family: "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif
   background-color: #efefef
   padding: 0
   margin: 0
@@ -74,12 +74,6 @@ footer
   margin: 20px 0 
   text-shadow: 0px 2px 0px #fff
 
-#appengine:hover 
-  -webkit-transform: scale(1.1)
-  -moz-transform: scale(1.1)
-  -o-transform: scale(1.1)
-  -ms-transform: scale(1.1)
-  transform: scale(1.1)
 
 
 #appengine 
@@ -91,47 +85,40 @@ footer
   background-repeat: no-repeat
   background-image: url(unquote('data:image/png;base64,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'))
     
-  -webkit-transition: all ease-out .2s
-  -moz-transition: all ease-out .2s
-  -o-transition: all ease-out .2s
-  -ms-transition: all ease-out .2s
-  transition: all ease-out .2s
-
 
 
 .banner
   padding: 0 27px
   position: relative
 
-.banner h1 
-  font-family: Verdana
-  font-weight: bold
-  font-size: 3.5em
-  line-height: 48px
-  color: #497CA6
-  text-shadow: 0px 1px 2px  #010202    
+  h1 
+    font-family: Verdana
+    font-weight: bold
+    font-size: 3.5em
+    line-height: 48px
+    color: #497CA6
+    text-shadow: 0px 1px 2px  #010202    
 
-.banner h1 a:hover, .banner h1 a
-  color: #497CA6
-  text-shadow: inherit
+    a:hover, a
+      color: #497CA6
+      text-shadow: inherit
 
+  h3
+    color: #666
+    font-size: 16px
+    line-height: 24px
+    margin-bottom: 12px
 
-.banner h3
-  color: #666
-  font-size: 16px
-  line-height: 24px
-  margin-bottom: 12px
 
 .blog_excerpt 
   padding: 15px 0 24px
 
+  .post time
+    float: none
+    clear: left
 
-.blog_excerpt .post time
-  float: none
-  clear: left
-
-.blog_excerpt .read-more
-  text-align: right
+  .read-more
+    text-align: right
 
 
 .blog_excerpt h3,
@@ -167,25 +154,24 @@ section.content > article.post header
   margin-bottom: 45px
 
 
-article.post h2
-  margin: 30px 0 0 0
-  color: #222
+article.post 
+  h2
+    margin: 30px 0 0 0
+    color: #222
 
-article.post p, article.post ul
-  font-family: 'Droid Sans', Verdana
-  font-size: 14px
-  line-height: 22px
-  margin: 20px 0
-  color: #333
+  p, ul
+    font-size: 15px
+    line-height: 22px
+    margin: 20px 0
+    color: #333
 
-article.post ul
-  margin-left: 20px
+  ul
+    margin-left: 20px
 
-
-article.post img
-  display: block
-  margin-bottom: 24px
-  box-shadow: 3px 3px 13px #444
+  img
+    display: block
+    margin-bottom: 24px
+    box-shadow: 3px 3px 13px #444
 
 .post time
   font-size: 12px
@@ -198,50 +184,44 @@ ul.tags
   margin-bottom: 24px
   text-align: right
 
+  li
+    list-style-type: none
+    display: inline
 
-ul.tags li
-  list-style-type: none
-  display: inline
-
-
-ul.tags li a
-  color: #999
-  text-decoration: none
-
-
-
-ul.tags li a:hover
-    color: #222
-
+    a
+      color: #999
+      text-decoration: none
+      
+     &:hover
+       color: #222
 
 h1 a, h2 a, h3 a
   text-decoration: none
 
 
-.archives ul.posts
-  margin-top: 24px
+.archives 
+  ul.posts
+    margin-top: 24px
 
+  li.post
+    list-style-type: none
+    border-bottom: 1px dotted #ccc
+    padding: 12px 0
 
-.archives li.post
-  list-style-type: none
-  border-bottom: 1px dotted #ccc
-  padding: 12px 0
+    time
+      color: #999
+      text-shadow: 0px 2px 0px #fff
+      margin-right: 24px
+      display:block
+      float: left
+      width: 120px
 
-.archives li.post time
-  color: #999
-  text-shadow: 0px 2px 0px #fff
-  margin-right: 24px
-  display:block
-  float: left
-  width: 120px
+    a
+      float: left
 
-.archives li.post a
-  float: left
-
-
-.archives ul.tags
-  float: right
-  margin-bottom:0
+  ul.tags
+    float: right
+    margin-bottom:0
 
 
 /*===== CUSTOM CSS =====*/
@@ -253,17 +233,15 @@ h1 a, h2 a, h3 a
 nav.main_nav
   float: right
 
+  ul 
+    list-style-type: none
+    padding: 9px 15px 15px 15px
+    float: left
 
-nav.main_nav ul 
-  list-style-type: none
-  padding: 9px 15px 15px 15px
-  float: left
-
-
-nav.main_nav li 
-  font-weight: bold
-  float: left
-  margin: 0 20px
+  li 
+    font-weight: bold
+    float: left
+    margin: 0 20px
 
 
 select.main_nav 
@@ -295,31 +273,30 @@ pre
   line-height: 100%
   background-color: #3F3F3F
 
-.hi p 
-  font-family: 'Droid Sans', Verdana
-  font-size: 14px
-  line-height: 21px
-  margin: 20px 0
-  color: #333
+.hi 
+  p 
+    font-size: 15px
+    line-height: 21px
+    margin: 20px 0
+    color: #333
 
-.hi a.btn
-  float: right
+  a.btn
+    float: right
  
 
-
-.archive ul 
-  list-style: none
-  margin: 0
-  padding: 5px 20px
-
-.archive .year
-  font-size: 18px
-  margin-top: 10px
-
-
-.archive .year ul 
-    font-size: 85%
+.archive 
+  ul 
+    list-style: none
     margin: 0
+    padding: 5px 20px
+
+  .year
+    font-size: 18px
+    margin-top: 10px
+
+    ul 
+      font-size: 85%
+      margin: 0
 
 
 /*
@@ -367,7 +344,6 @@ pre::-webkit-scrollbar-thumb:vertical
 
 pre::-webkit-scrollbar-thumb:horizontal
   -webkit-border-radius: 3px;
-
 
 
 
