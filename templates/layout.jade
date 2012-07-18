@@ -35,8 +35,8 @@ html(lang='en')
         script(defer=true, src='js/libs/respond.min.js')
 
   body
-    div#container
-      div#main(role='main')
+    #container
+      #main(role='main')
         header.banner.clearfix
           block header
             h1
@@ -46,7 +46,7 @@ html(lang='en')
         select.main_nav
           for item in locals.menu
             option(value=item.url) #{item.name}
-        div#mainmain
+        #mainmain
           //- Desktop Menu
           nav.main_nav
             ul
