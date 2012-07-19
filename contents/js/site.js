@@ -23,28 +23,9 @@ define(['jquery', 'hljs'], function($, hljs) {
                   }
                   hljs.highlightBlock(e);
               });
-
-		          //remove old iframes inserted by disqus
-		          $('iframe[name^="easyXDM_DISQUS"]').remove();		   
-
-              //load Disqus
-              site.loadDisqus();
-
 		      });
 	    },
-
-      loadDisqus: function() {
-          //Disqus
-		      if ($('#disqus_thread').length) {
-			        var disqus_shortname = 'alexnormand';
-			        var dsq = document.createElement('script');
-			        dsq.async = true;
-			        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-			        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-		      }
-      },
       
-
 	    init: function() {
 
 		      if(!!(window.history && history.pushState)) {
@@ -80,9 +61,7 @@ define(['jquery', 'hljs'], function($, hljs) {
           
           //init highlight.js
           hljs.initHighlighting();
-
-          //load Disqus
-          site.loadDisqus();
+    
 	    }
 	};
     
