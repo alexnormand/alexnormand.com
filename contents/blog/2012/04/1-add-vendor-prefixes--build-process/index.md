@@ -46,9 +46,9 @@ box-shadow, border-radius, gradients, transitions,...
 
 We'll use the [prefixr api](http://www.prefixr.com/api/usage/) on the command line to add any missing vendor-prefixed property:
 
-{% syntax bash %}
+```
 $ curl -sSd css="$(cat path/to/style.css)" http://prefixr.com/api/index.php -o /path/to/output/style.css
-{% endsyntax %}
+```
 
 <br />
 
