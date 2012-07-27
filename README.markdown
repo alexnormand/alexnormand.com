@@ -16,7 +16,11 @@ Building & testing the site
 
 Then simply type:
 
-    $ make && cd appengine/static && `python -m SimpleHTTPServer`
+    $ git clone https://github.com/alexnormand/alexnormand.com.git
+    $ cd alexnormand.com
+    $ make
+    $ cd appengine/static
+    $ python -m SimpleHTTPServer
 
 open [http://localhost:8000/](http://localhost:8000/) in your browser.
 
