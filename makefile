@@ -9,7 +9,7 @@ APPENGINEUPLOAD = $(APPENGINEPATH)/appcfg.py
 BUILD.MAIN.JS = $(BUILD.DIR)/js/main.js
 APPENGINE.MAIN.JS = $(APPFOLDER)/static/js/main.js
 NO.COPYRIGHT := `tail -n +$$(sed -n '/(function/=' $(BUILD.MAIN.JS)) $(BUILD.MAIN.JS) > $(APPENGINE.MAIN.JS)`
-REMOVE.TMP.FILES :=  `find $(APPFOLDER) -type f | grep '~'$ | xargs rm`
+REMOVE.TMP.FILES :=  `find $(APPFOLDER) -type f | grep '~'$ | xargs rm -f`
 
 all : build-static-site
 
