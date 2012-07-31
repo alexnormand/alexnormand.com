@@ -42,11 +42,7 @@ table
 a 
   color: #497CA6
   text-decoration: underline
-  -webkit-transition: color ease-in-out .5s
-  -moz-transition: color ease-in-out .5s
-  -o-transition: color ease-in-out .5s
-  -ms-transition: color ease-in-out .5s
-
+  transition: color ease-in-out .5s  
 
   &:hover
     color:#CD3B16
@@ -146,8 +142,6 @@ section.content
 
 #mainmain
   background-color: #F7F7F7
-  -moz-box-shadow: 0px 4px 12px #ccc
-  -webkit-box-shadow: 0px 4px 12px #ccc
   box-shadow: 0px 4px 12px #ccc
 
 
@@ -380,9 +374,7 @@ pre::-webkit-scrollbar-thumb:horizontal
 	color: DarkSlateGrey;
     }
 
-    #mainmain {
-	-moz-box-shadow: none; /* FF3.5+ */
-	-webkit-box-shadow: none; /* Saf3.0+, Chrome */
-	box-shadow: none; /* Opera 10.5, IE 9.0 */
+    #mainmain {		
+	box-shadow: none;
     }    
 }
