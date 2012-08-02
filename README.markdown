@@ -1,6 +1,5 @@
 Requirements
 ------------
-In order to build and test this website you will need the following tools:
 
    * [node.js](http://nodejs.org/)
 
@@ -13,8 +12,6 @@ Installing Wintersmith
 
 Building & testing the site
 ----------------------------
-
-Then simply type:
 
     $ git clone https://github.com/alexnormand/alexnormand.com.git
     $ cd alexnormand.com
