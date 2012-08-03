@@ -23,12 +23,11 @@ build:
 
 
 minify-js:
-	node $(BUILD.DIR)/js/libs/require/r.js -o $(BUILD.DIR)/js/app-build.js
-
+	nodejs $(BUILD.DIR)/js/libs/require/r.js -o $(BUILD.DIR)/js/app-build.js
 
 
 minify-css:
-	node $(BUILD.DIR)/js/libs/require/r.js -o cssIn=$(BUILD.DIR)/css/site.css out=$(BUILD.DIR)/css/site.css optimizeCss=standard
+	nodejs $(BUILD.DIR)/js/libs/require/r.js -o cssIn=$(BUILD.DIR)/css/site.css out=$(BUILD.DIR)/css/site.css optimizeCss=standard
 
 
 build-static-site: clean build minify-js minify-css
