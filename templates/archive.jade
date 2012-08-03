@@ -3,7 +3,7 @@ extends layout
 
 
 block title 
-  #{locals.owner} - Archive
+  | #{ locals.owner } - Archive
 
 block main
   != page.html
@@ -29,7 +29,7 @@ block main
       each year in _.chain(archive).keys().reverse().value()
         li.year
           h2 
-            | #{year}
+            | #{ year }
           - var months = _.groupBy(archive[year], function(item) { return map[item.date.getMonth()] })
           ul
             each articles, month in months

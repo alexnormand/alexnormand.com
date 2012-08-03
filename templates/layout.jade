@@ -5,7 +5,7 @@ html(lang='en')
       meta(charset='utf-8')
       title
         block title
-          = locals.name
+          | #{ locals.name }
 
       meta(name='author', content=locals.owner)
       meta(name='viewport', content='width=device-width, initial-scale=1.0')
@@ -40,19 +40,19 @@ html(lang='en')
         header.banner.clearfix
           block header
             h1
-              a(href='/') #{locals.owner}
+              a(href='/') #{ locals.owner }
             h3 alexnormand.com
         //- mobile friendly menu
         select.main_nav
           for item in locals.menu
-            option(value=item.url) #{item.name}
+            option(value=item.url) #{ item.name }
         #mainmain
           //- Desktop Menu
           nav.main_nav
             ul
               for item in locals.menu
                 li
-                  a(href=item.url, title=item.description) #{item.name}
+                  a(href=item.url, title=item.description) #{ item.name }
           section.content
             block main                                                  
     footer

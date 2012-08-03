@@ -5,7 +5,7 @@ block page-description
 
 
 block title
-  #{locals.owner} - #{ page.title }
+  | #{ locals.owner } - #{ page.title }
 
 block main
   include datetime
@@ -13,7 +13,7 @@ block main
     header
       h1.title 
         a(href=page.url)
-          #{page.title}
+          | #{ page.title }
       mixin datetime(page.date)
     != page.html
 
