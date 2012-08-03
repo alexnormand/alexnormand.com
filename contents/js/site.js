@@ -18,9 +18,6 @@ define(['jquery', 'hljs'], function($, hljs) {
 
                 //highligh code blocks
                 $('pre code').each(function(i, e) {
-                    if ($(e).attr('class') === undefined) {
-                        $(e).attr('class', 'no-highlight');
-                    }
                     hljs.highlightBlock(e);
                 });
             });
@@ -59,8 +56,10 @@ define(['jquery', 'hljs'], function($, hljs) {
 
             });
 
-            //init highlight.js
-            hljs.initHighlighting();
+            //highligh code blocks
+            $('pre code').each(function(i, e) {
+                hljs.highlightBlock(e);
+            });
 
         }
     };
