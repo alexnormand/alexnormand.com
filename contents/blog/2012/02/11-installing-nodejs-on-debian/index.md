@@ -55,6 +55,24 @@ which sets the release from which the package should be installed.
 $ aptitude update
 $ aptitude install -t unstable nodejs
 ```
+<br />
+- - -
+### Update 2012/08/04:
+As of July 31, 2012 due to a naming conflict with the **[node](http://packages.debian.org/squeeze/node)** 
+package (an Amateur Packet Radio Node Program), the **nodejs** package maintainers have renamed the binary from node to nodejs.
+In other words the **node** command has been renamed to **nodejs**. To change this behaviour, 
+install the [nodejs-legacy](http://packages.debian.org/sid/nodejs-legacy) package:
+```
+$ aptitude install -t unstable nodejs-legacy
+```
+
+This will create a symlink to **/usr/bin/node**. This way you can use the **node** command
+(instead of **/usr/bin/nodejs** as provided by Debian).
+
+You can read more about this decision [here](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=611698#82)
+
+- - -
+<br />
 
 You may also want to install  [npm](http://npmjs.org/). 
 Although there is an available debian [package](http://packages.debian.org/sid/npm) in the Debian Sid repo, I recommend
