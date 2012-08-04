@@ -21,14 +21,11 @@ build:
 	@rm -rf $(BUILD.DIR)
 	wintersmith build
 
-
 minify-js:
-	nodejs $(BUILD.DIR)/js/libs/require/r.js -o $(BUILD.DIR)/js/app-build.js
-
+	node $(BUILD.DIR)/js/libs/require/r.js -o $(BUILD.DIR)/js/app-build.js
 
 minify-css:
-	nodejs $(BUILD.DIR)/js/libs/require/r.js -o cssIn=$(BUILD.DIR)/css/site.css out=$(BUILD.DIR)/css/site.css optimizeCss=standard
-
+	node $(BUILD.DIR)/js/libs/require/r.js -o cssIn=$(BUILD.DIR)/css/site.css out=$(BUILD.DIR)/css/site.css optimizeCss=standard
 
 build-static-site: clean build minify-js minify-css
 	@cp -r $(BUILD.DIR) $(APPFOLDER)/static
