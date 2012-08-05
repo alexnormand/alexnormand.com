@@ -69,7 +69,8 @@ $ aptitude install -t unstable nodejs-legacy
 This will symlink **/usr/bin/node** to **/usr/bin/nodejs**. This way you can use the **node** command
 (instead of **/usr/bin/nodejs** as provided by Debian).
 
-You can read more about this decision [here](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=611698#82)
+You can read more about this decision [here](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=611698#82) 
+and [here](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=681360#108)
 
 - - -
 <br />
