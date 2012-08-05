@@ -6,7 +6,6 @@ block title
   | #{ locals.owner } - Archive
 
 block main
-  != page.html
   - var archive = [];
   - _.each(contents.blog._.directories, function(year) {
   -   _.each(year._.directories, function(month) {
