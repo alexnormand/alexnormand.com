@@ -2,16 +2,22 @@ define(['jquery', 'hljs'], function($, hljs) {
     var site  = {
 
         updateMainContent: function(link) {
-            $.get(link.href, function(data){
+            $.get(link.href, function(data) {
+
+                var pfx = ["webkitAnimationEnd", "mozAnimationEnd", "MSAnimationEnd", "oAnimationEnd", "animationend"],
+                    classes= ['animated', 'fadeInLeft'].join(' ');
+
 
                 if (window.location.host === 'www.alexnormand.com') {
                     _gaq.push(['_trackPageview', link.href]);
                 }
 
                 $('section.content').replaceWith($(data).find('.content'));
-                $('section.content').children()
-                    .hide()
-                    .fadeIn(500);
+                $('section.content').addClass(classes);
+
+                $('section.content').on(pfx.join(' '), function() {
+                    $(this).removeClass(classes);
+                });
 
                 $(window).scrollTop(0); //for mobile browsers
                 $('title').text($(data).filter('title').text()); //set new page title
