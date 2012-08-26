@@ -42,17 +42,13 @@ html(lang='en')
             h1
               a(href='/') #{ locals.owner }
             h3 alexnormand.com
-        //- mobile friendly menu
-        select.main_nav
-          for item in locals.menu
-            option(value=item.url) #{ item.name }
-        #mainmain
           //- Desktop Menu
-          nav.main_nav
-            ul
-              for item in locals.menu
-                li
-                  a(href=item.url, title=item.description) #{ item.name }
+        nav.main_nav
+          ul
+            for item in locals.menu
+              li
+                a(href=item.url, title=item.description) #{ item.name }
+        #mainmain
           section.content
             block main                                                  
     footer

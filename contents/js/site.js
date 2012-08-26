@@ -49,7 +49,18 @@ define(['jquery', 'hljs'], function($, hljs) {
             }
 
 
-            $('select.main_nav').change(function() {
+            var $select = $('<select/>').addClass('main_nav');
+
+            $('nav.main_nav a').each(function(i) {
+                $('<option/>', {
+                    value: this.href,
+                    text: $(this).text()
+                }).appendTo($select);
+            });
+
+            $select.insertBefore('nav.main_nav');
+
+            $select.change(function() {
                 var option = $(this).find(':selected');
 
                 option.prop('selected', true);
