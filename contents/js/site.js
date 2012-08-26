@@ -32,7 +32,7 @@ define(['jquery', 'hljs'], function($, hljs) {
         init: function() {
 
             if (!!(window.history && history.pushState)) {
-                $('#mainmain').on('click', 'a', function(e){
+                $('#main').on('click', 'a', function(e){
                     var link = e.target;
                     if (link.host === window.location.host) {
                         site.updateMainContent(link);
@@ -42,36 +42,12 @@ define(['jquery', 'hljs'], function($, hljs) {
                 });
 
                 window.setTimeout(function() {
-                    $(window).bind('popstate', function(e) {
+                    $(window).on('popstate', function(e) {
                         site.updateMainContent(window.location);
                     });
                 }, 1000);
             }
 
-
-            var $select = $('<select/>').addClass('main_nav');
-
-            $('nav.main_nav a').each(function(i) {
-                $('<option/>', {
-                    value: this.href,
-                    text: $(this).text()
-                }).appendTo($select);
-            });
-
-            $select.insertBefore('nav.main_nav');
-
-            $select.change(function() {
-                var option = $(this).find(':selected');
-
-                option.prop('selected', true);
-
-                if (option.val().indexOf('/') === 0) {
-                    site.updateMainContent({href: option.val()});
-                } else {
-                    window.location = option.val();
-                }
-
-            });
 
             //highligh code blocks
             $('pre code').each(function(i, e) {

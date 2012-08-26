@@ -17,7 +17,7 @@ html(lang='en')
 
       link(rel='stylesheet', href='/css/site.css')
       link(
-        href='http://fonts.googleapis.com/css?family=Inconsolata|Droid+Sans',
+        href='http://fonts.googleapis.com/css?family=Inconsolata|PT+Sans',
         rel='stylesheet',
         type='text/css'
       )
@@ -35,22 +35,19 @@ html(lang='en')
         script(defer=true, src='js/libs/respond.min.js')
 
   body
-    #container
-      #main(role='main')
+    #main(role='main')
         header.banner.clearfix
           block header
             h1
               a(href='/') #{ locals.owner }
-            h3 alexnormand.com
-          //- Desktop Menu
+
+        //- Desktop Menu
         nav.main_nav
-          ul
-            for item in locals.menu
-              li
-                a(href=item.url, title=item.description) #{ item.name }
-        #mainmain
-          section.content
-            block main                                                  
+          for item in locals.menu
+            a(href=item.url, title=item.description) #{ item.name }
+
+        section.content
+          block main                                                  
     footer
       | Powered By 
       a(href='http://jnordberg.github.com/wintersmith/') Wintersmith 
