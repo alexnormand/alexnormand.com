@@ -2,11 +2,7 @@ define(['jquery', 'hljs'], function($, hljs) {
     var site  = {
 
         updateMainContent: function(link) {
-
-            var url = /\/$/.test(link.href) ? link.href + 'index.html'
-                                            : link.href + '/index.html';
-
-            $.get(url, function(data) {
+            $.get(link.href, function(data) {
 
                 var pfx = ["webkitAnimationEnd", "mozAnimationEnd", "MSAnimationEnd", "oAnimationEnd", "animationend"],
                     classes= ['animated', 'fadeInLeft'].join(' ');
