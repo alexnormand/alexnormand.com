@@ -46,7 +46,7 @@ box-shadow, border-radius, gradients, transitions,...
 
 We'll use the [prefixr api](http://www.prefixr.com/api/usage/) on the command line to add any missing vendor-prefixed property:
 
-```
+```sh
 $ curl -sSd css="$(cat path/to/style.css)" http://prefixr.com/api/index.php -o /path/to/output/style.css
 ```
 
@@ -56,7 +56,7 @@ $ curl -sSd css="$(cat path/to/style.css)" http://prefixr.com/api/index.php -o /
 Here's the simplified ant build file which passes the contents of the **style.css** 
 file to the css parameter and makes a POST request to **http://prefixr.com/api/index.php**
 
-```xml
+```
     <target>
         <!--Source CSS dir-->
         <property name="src.css.dir" value="${basedir}/css"/>
@@ -79,7 +79,7 @@ file to the css parameter and makes a POST request to **http://prefixr.com/api/i
 ```
 
 Here's the makefile version:
-```makefile
+```sh
 .PHONY = all, clean, copy, gen
 
 SRC   = src
@@ -118,11 +118,11 @@ You can view source code at https://github.com/alexnormand/demos/tree/gh-pages/2
 Building the project
 --------------------
 To build the project simply run
-```bash
+```sh
 $ ant
 ```
 or 
-```bash
+```sh
 $ make
 ```
 

@@ -20,7 +20,7 @@ Step 1: Adding the repo to /etc/apt/sources.list
 
 First of all, you need to add the Debian Sid (unstable) repo to your **/etc/apt/sources.list** file:
 
-```
+```sh
 deb http://ftp.debian.org/debian/ unstable main contrib non-free
 ```
 
@@ -34,11 +34,11 @@ the unstable version, and therefore prevent upgrading all of your system to Debi
 Create a **/etc/apt/apt.conf** file and add the following line :
 
 *If you're using testing*
-```
+```sh
   APT:Default-Release "testing";
 ```
 *If you're using stable*
-```
+```sh
   APT:Default-Release "stable";
 ```
 
@@ -79,7 +79,7 @@ You may also want to install  [npm](http://npmjs.org/).
 Although there is an available debian [package](http://packages.debian.org/sid/npm) in the Debian Sid repo, I recommend
 installing it the "official" way:
 
-```
+```sh
 $ curl http://npmjs.org/install.sh | sh
 ```
 

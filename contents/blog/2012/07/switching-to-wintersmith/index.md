@@ -55,7 +55,7 @@ $ npm install wintersmith -g
 ```
 
 To create a new site:
-```
+```sh
 $ wintersmith new <path>
 ```
 
@@ -97,7 +97,7 @@ this will create the basic structure for your site:
                "description": "About ",
                "url": "/about"
               }
-        ]  
+        ]
      },
      "plugins": [
          "wintersmith-stylus/"
