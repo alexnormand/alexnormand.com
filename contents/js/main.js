@@ -1,15 +1,15 @@
 require.config({
-    paths: {
-	jquery: 'libs/jquery',
-        hljs:   'libs/highlight.pack',
-	site:   'site'
-    }
+  paths: {
+    jquery: 'libs/jquery',
+    prettify: 'libs/prettify',
+    site:   'site'
+  }
 });
 
-require(['jquery', 'hljs', 'site'], function($, hljs, site) {
+require(['jquery', 'prettify', 'site'], function($, prettify, site) {
 
-        $(function() {
-	    site.init();
+  $(function() {
+    site.init();
 	});
 });
 

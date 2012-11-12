@@ -1,5 +1,23 @@
-define(['jquery', 'hljs'], function($, hljs) {
+define(['jquery', 'prettify'], function($, prettify) {
     var site  = {
+
+        //highlight code blocks
+        prettify: function() {
+                $('pre code').each(function() {
+                    var language = $(this).attr('class');
+
+                    if(language) {
+                        language = language.split(' ')[0];
+                        $(this)
+                          .removeClass(language)
+                          .addClass('lang-' + language);
+                    }
+
+
+                    $(this).addClass('prettyprint');
+                });
+                prettyPrint();
+        },
 
         updateMainContent: function(link) {
             var url  = /\.html$/.test(link.href)
@@ -28,10 +46,8 @@ define(['jquery', 'hljs'], function($, hljs) {
                 $(window).scrollTop(0); //for mobile browsers
                 $('title').text($(data).filter('title').text()); //set new page title
 
-                //highligh code blocks
-                $('pre code').each(function(i, e) {
-                    hljs.highlightBlock(e);
-                });
+                site.prettify();
+
             });
         },
 
@@ -53,13 +69,8 @@ define(['jquery', 'hljs'], function($, hljs) {
                     });
                 }, 1000);
             }
-
-
-            //highligh code blocks
-            $('pre code').each(function(i, e) {
-                hljs.highlightBlock(e);
-            });
-
+            
+            this.prettify();
         }
     };
 
