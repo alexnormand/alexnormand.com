@@ -10,8 +10,8 @@ require(['jquery', 'prettify', 'site'], function($, prettify, site) {
 
   $(function() {
     window._gaq = window._gaq || [];
-    _gaq.push(['_setAccount', 'UA-27119715-3']);
-    _gaq.push(['_trackPageview']);
+    window._gaq.push(['_setAccount', 'UA-27119715-3']);
+    window._gaq.push(['_trackPageview']);
 
     (function() {
       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;

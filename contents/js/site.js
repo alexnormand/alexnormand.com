@@ -33,7 +33,7 @@ define(['jquery', 'prettify'], function($, prettify) {
 
 
                 if (window.location.host === 'www.alexnormand.com') {
-                    _gaq.push(['_trackPageview', link.href]);
+                    window._gaq.push(['_trackPageview', link.href]);
                 }
 
                 $('section.content').replaceWith($(data).find('.content'));
