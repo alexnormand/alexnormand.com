@@ -3,13 +3,13 @@ require.config({
     jquery: 'libs/jquery',
     prettify: 'libs/prettify',
     noisy: 'libs/jquery.noisy.min',
-    site:   'site'
+    site: 'site'
   },
 
   shim: {
     'noisy': {
       deps: ['jquery'],
-      exports:  'jQuery.fn.noisy'
+      exports: 'jQuery.fn.noisy'
     }
   }
 });
@@ -29,7 +29,7 @@ require(['jquery', 'prettify', 'site', 'noisy'], function($, prettify, site) {
 
     site.init();
 
-	});
+  });
 });
 
 
