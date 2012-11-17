@@ -2,11 +2,19 @@ require.config({
   paths: {
     jquery: 'libs/jquery',
     prettify: 'libs/prettify',
+    noisy: 'libs/jquery.noisy.min',
     site:   'site'
+  },
+
+  shim: {
+    'noisy': {
+      deps: ['jquery'],
+      exports:  'jQuery.fn.noisy'
+    }
   }
 });
 
-require(['jquery', 'prettify', 'site'], function($, prettify, site) {
+require(['jquery', 'prettify', 'site', 'noisy'], function($, prettify, site) {
 
   $(function() {
     window._gaq = window._gaq || [];
