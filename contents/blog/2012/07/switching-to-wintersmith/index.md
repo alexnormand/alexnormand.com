@@ -6,7 +6,7 @@ template: article.jade
 
 I've decided to Switch this site to another static site generator:
 [Wintermith](http://jnordberg.github.com/wintersmith/).
-I won't go over the [reasons](http://mickgardner.com/2011/04/27/An-Introduction-To-Static-Site-Generators.html) 
+I won't go over the [reasons](http://mickgardner.com/2011/04/27/An-Introduction-To-Static-Site-Generators.html)
 [why](http://news.ycombinator.com/item?id=896634) static site generators are awesome (or [harmful](http://www.jeremyscheff.com/2011/08/jekyll-and-other-static-site-generators-are-currently-harmful-to-the-free-open-source-software-movement/)) for simple websites and blogs.
 This site used to be powered by [Hyde](https://github.com/hyde/hyde/), an SSG written in python.
 This post will describe the reasons why I decided to drop Hyde in favour of Wintersmith.
@@ -14,20 +14,20 @@ This post will describe the reasons why I decided to drop Hyde in favour of Wint
 <span class="more"></span>
 
 
-Introduction 
+Introduction
 -------------
 Static site generators have become quite popular recently.
 While there aren't any official figures to my knowledge, I believe [Jekyll](http://jekyllrb.com/) is the most
 popular static site generator (SSG) and powers [Github pages](http://pages.github.com/).
 
 Despite this, I chose Jekyll's evil twin [Hyde](https://github.com/hyde/hyde/) which looked like an elegant and cool alternative.
-At first Hyde was quite easy to use and play around with up for a newcomer like myself.
+At first Hyde was quite easy to use and play around with for a newcomer like myself.
 However, one of Hyde's biggest drawback was (and still is) its documentation.
 As a result finding information was quite hard, and I mainly built the first
 version of this site by looking at other Hyde powered sites, namely
 http://michealgrosner.com and http://vincent.bernat.im.
 
-I also experienced weird behaviours, quirks & bugs between versions, and 
+I also experienced weird behaviours, quirks & bugs between versions, and
 Hyde seemed overly complicated to me.
 
 
@@ -111,7 +111,7 @@ And finally when you're done editing your templates and customizing your site:
 $ wintersmith build
 ```
 
-this will generate a static version of your site in a **build** folder 
+this will generate a static version of your site in a **build** folder
 ready to be uploaded to any web server.
 
 Wintermsith is a promising project and is being actively developed by [Johan Nordberg](http://johan-nordberg.com/).
@@ -122,6 +122,6 @@ so feel free to [fork this site](https://github.com/alexnormand/alexnormand.com)
 
 
 
-   
+
 
 
