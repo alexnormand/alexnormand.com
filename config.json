@@ -27,7 +27,10 @@
         "description": "About ",
         "url": "/about"
       }
-    ]   
+    ]
+  },
+  "require": {
+    "_": "underscore"
   },
   "plugins": [
     "wintersmith-stylus/"
