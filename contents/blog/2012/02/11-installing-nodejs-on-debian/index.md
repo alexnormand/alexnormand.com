@@ -1,9 +1,10 @@
+---
 title:  Installing node.js on Debian stable/testing via aptitude
 author: Alex Normand
 description: How to install node.js on Debian stable/testing via aptitude
 date: 2012-02-11 18:00
 template: article.jade
-
+---
 
 When Installing node.js on Debian you have two options:
 
@@ -26,8 +27,8 @@ deb http://ftp.debian.org/debian/ unstable main contrib non-free
 
 Step 2: Setting aptitude's default Debian release in /etc/apt/apt.conf
 --------------------------------------------------------------------------
-Since [node.js](http://packages.debian.org/sid/nodejs) is the only package you 
-want to install from the Debian Sid (unstable) repo, you must set aptitude's 
+Since [node.js](http://packages.debian.org/sid/nodejs) is the only package you
+want to install from the Debian Sid (unstable) repo, you must set aptitude's
 default release. This will prevent all of your packages from being updated to
 the unstable version, and therefore prevent upgrading all of your system to Debian Sid (unstable).
 
@@ -58,9 +59,9 @@ $ aptitude install -t unstable nodejs
 <br />
 - - -
 ### Update 2012/08/04:
-As of July 31, 2012 due to a naming conflict with the **[node](http://packages.debian.org/squeeze/node)** 
+As of July 31, 2012 due to a naming conflict with the **[node](http://packages.debian.org/squeeze/node)**
 package (an Amateur Packet Radio Node Program), the **nodejs** package maintainers have renamed the binary from node to nodejs.
-In other words, the **node** command has been renamed to **nodejs**. To change this behaviour, 
+In other words, the **node** command has been renamed to **nodejs**. To change this behaviour,
 install the [nodejs-legacy](http://packages.debian.org/sid/nodejs-legacy) package:
 ```
 $ aptitude install -t unstable nodejs-legacy
@@ -69,13 +70,13 @@ $ aptitude install -t unstable nodejs-legacy
 This will symlink **/usr/bin/node** to **/usr/bin/nodejs**. This way you can use the **node** command
 (instead of **/usr/bin/nodejs** as provided by Debian).
 
-You can read more about this decision [here](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=611698#82) 
+You can read more about this decision [here](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=611698#82)
 and [here](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=681360#108)
 
 - - -
 <br />
 
-You may also want to install  [npm](http://npmjs.org/). 
+You may also want to install  [npm](http://npmjs.org/).
 Although there is an available debian [package](http://packages.debian.org/sid/npm) in the Debian Sid repo, I recommend
 installing it the "official" way:
 

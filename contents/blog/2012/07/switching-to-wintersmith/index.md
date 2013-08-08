@@ -1,8 +1,10 @@
+---
 title: Switching to Wintersmith
 author: Alex Normand
 description: Switching to Wintersmith
 date: 2012-07-15 22:42
 template: article.jade
+---
 
 I've decided to Switch this site to another static site generator:
 [Wintermith](http://jnordberg.github.com/wintersmith/).

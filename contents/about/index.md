@@ -1,6 +1,8 @@
+---
 title: About me
 description: Alex Normand - About me
 template: about.jade
+---
 
 Hi, I’m Alex Normand, a 22 year old web developer located in Paris, France.
 I’m currently an intern at [Crédit&nbsp;Agricole](http://www.credit-agricole.com/en)
@@ -9,10 +11,10 @@ student at University Paris Sud 11 Orsay where I’m studying for a Master of
 science in computer science.
 
 I'm passionate about web development. I'm particularly interested in
-Web applications, the Mobile Web, Web standards, HTML5, JavaScript and all aspects of front-end development. I also enjoy 
+Web applications, the Mobile Web, Web standards, HTML5, JavaScript and all aspects of front-end development. I also enjoy
 back-end development using PHP, and I'm currently learning how to master the
 [Symfony2](http://symfony.com/) framework. I've also started digging into [node.js](http://nodejs.org).
-When I'm working on a project, I tend to focus on speed, minimalism, 
+When I'm working on a project, I tend to focus on speed, minimalism,
 efficiency and usability.
 
 
@@ -20,7 +22,7 @@ I admire the work of [Paul Irish](http://paulirish.com/) and
 [Steve Souders](http://stevesouders.com) (and many
 [other developers](http://twitter.com/#!/normand_alex/following)...).
 
-I'm an Open Source enthusiast and have been a happy [Debian GNU/Linux](http://www.debian.org/) 
+I'm an Open Source enthusiast and have been a happy [Debian GNU/Linux](http://www.debian.org/)
 user since the Debian Sarge release, and have done some Internationalization and translation work for the Debian project.
 
 
