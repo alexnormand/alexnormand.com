@@ -1,10 +1,13 @@
 module.exports = function (grunt) {
+  var wintersmithBuildDir = 'build';
+  var appengineBuildDir   = 'appengine';
+  var appengineStaticdir  = appengineBuildDir + '/static';
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     clean: {
-      appengineDir: ['appengine/static'],
-      wintersmithDir: ['build']
+      appengineDir: [appengineStaticdir],
+      wintersmithDir: [wintersmithBuildDir]
     },
     wintersmith: {
       build: {},
@@ -20,25 +23,25 @@ module.exports = function (grunt) {
         files: [
           {
             expand: true,
-            cwd: 'build/about',
+            cwd:  wintersmithBuildDir +'/about',
             src: ['**'],
-            dest: 'appengine/static/about'
+            dest: appengineStaticdir +'/about'
           },
           {
             expand: true,
-            cwd: 'build/blog',
+            cwd:  wintersmithBuildDir +'/blog',
             src: ['**'],
-            dest: 'appengine/static/blog'
+            dest: appengineStaticdir +'/blog'
           },
           {
             expand: true,
-            cwd: 'build',
+            cwd:  wintersmithBuildDir,
             src: [
               'index.html',
               'favion.ico',
               'apple-touch-icon.png'
             ],
-            dest: 'appengine/static'
+            dest: appengineStaticdir
           }
         ]
       }
@@ -49,16 +52,16 @@ module.exports = function (grunt) {
           almond: true,
           preserveLicenseComments: false,
           name: 'main',
-          baseUrl: 'build/js',
-          out: 'appengine/static/js/main.js',
-          mainConfigFile: 'build/js/main.js',
+          baseUrl: wintersmithBuildDir + '/js',
+          out:  appengineStaticdir + '/js/main.js',
+          mainConfigFile: wintersmithBuildDir +'/js/main.js',
         }
       },
       css: {
         options: {
           optimizeCss: 'standard',
-          cssIn: 'build/css/site.css',
-          out: 'appengine/static/css/site.css'
+          cssIn: wintersmithBuildDir + '/css/site.css',
+          out: appengineStaticdir + '/css/site.css'
         }
       }
     }
@@ -69,7 +72,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-wintersmith');
   grunt.loadNpmTasks('grunt-requirejs');
 
-
   grunt.registerTask('preview', ['clean:wintersmithDir', 'wintersmith:preview']);
   grunt.registerTask('build', [
     'clean:appengineDir',
@@ -79,5 +81,4 @@ module.exports = function (grunt) {
     'requirejs',
     'clean:wintersmithDir'
   ]);
-
 };
