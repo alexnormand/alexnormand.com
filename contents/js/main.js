@@ -2,7 +2,7 @@ require.config({
   paths: {
     jquery: 'libs/jquery',
     prettify: 'libs/prettify',
-    noisy: 'libs/jquery.noisy.min',
+    noisy: 'libs/jquery.noisy',
     site: 'site'
   },
 
