@@ -15,11 +15,9 @@ Building & testing the site
     $ git clone https://github.com/alexnormand/alexnormand.com.git
     $ cd alexnormand.com
     $ npm install
-    $ grunt
-    $ cd appengine/static
-    $ python -m SimpleHTTPServer
+    $ grunt preview
 
-open [http://localhost:8000/](http://localhost:8000/) in your browser.
+open [http://localhost:8080/](http://localhost:8080/) in your browser.
 
 
 
