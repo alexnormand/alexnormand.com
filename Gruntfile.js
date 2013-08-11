@@ -77,7 +77,7 @@ module.exports = function (grunt) {
     'wintersmith:build',
     'copy',
     'requirejs',
-    'clean:postBuild'
+    'clean:wintersmithDir'
   ]);
 
 };
