@@ -3,11 +3,17 @@ module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     clean: {
-      preBuild: ['build', 'appengine/static'],
-      postBuild: ['build']
+      appengineDir: ['appengine/static'],
+      wintersmithDir: ['build']
     },
     wintersmith: {
-      build: {}
+      build: {},
+      preview: {
+        options: {
+          action: 'preview',
+          config: 'config-preview.json'
+        }
+      }
     },
     copy: {
       main: {
@@ -63,5 +69,15 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-wintersmith');
   grunt.loadNpmTasks('grunt-requirejs');
 
-  grunt.registerTask('default', ['clean:preBuild','wintersmith', 'copy', 'requirejs', 'clean:postBuild']);
+
+  grunt.registerTask('preview', ['clean:wintersmithDir', 'wintersmith:preview']);
+  grunt.registerTask('build', [
+    'clean:appengineDir',
+    'clean:wintersmithDir',
+    'wintersmith:build',
+    'copy',
+    'requirejs',
+    'clean:postBuild'
+  ]);
+
 };
