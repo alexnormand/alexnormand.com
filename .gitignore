@@ -5,3 +5,4 @@ content/media/videos/*
 build/*
 appengine/static/*
 .hyde_deps
+node_modules/*
