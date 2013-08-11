@@ -33,6 +33,6 @@
     "_": "underscore"
   },
   "plugins": [
-    "wintersmith-stylus/"
+    "./node_modules/wintersmith-stylus/"
   ]
 }

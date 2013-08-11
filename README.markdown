@@ -8,14 +8,14 @@ Installing Wintersmith
 ----------------------
 
     $ npm install wintersmith -g
-    $ npm install wintersmith-stylus -g
 
 Building & testing the site
 ----------------------------
 
     $ git clone https://github.com/alexnormand/alexnormand.com.git
     $ cd alexnormand.com
-    $ make
+    $ npm install
+    $ grunt
     $ cd appengine/static
     $ python -m SimpleHTTPServer
 
