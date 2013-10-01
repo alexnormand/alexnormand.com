@@ -7,7 +7,6 @@ block page-description
 block main
   include datetime
   section.hi(itemscope=true, itemtype='http://data-vocabulary.org/Person')
-    h1.title Welcome
     != page.html
   section.blog_excerpt
     h1.title Latest blog posts
@@ -29,8 +28,8 @@ block main
       article.post
         header
           h3
-            a(href=article.url)= article.title
-          mixin datetime(article.date)  
+            a.internal(href=article.url)= article.title
+          mixin datetime(article.date)
         p.content!= article.intro
         if article.hasMore
           p.read-more
@@ -38,4 +37,4 @@ block main
 
 
 
-    
+

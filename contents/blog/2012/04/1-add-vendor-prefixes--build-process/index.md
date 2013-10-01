@@ -55,7 +55,7 @@ $ curl -sSd css="$(cat path/to/style.css)" http://prefixr.com/api/index.php -o /
 
 
 Here's the simplified ant build file which passes the contents of the **style.css**
-file to the css parameter and makes a POST request to **http://prefixr.com/api/index.php**
+file to the css parameter and makes a POST request to http://prefixr.com/api/index.php
 
 ```
     <target>

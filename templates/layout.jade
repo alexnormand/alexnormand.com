@@ -10,48 +10,76 @@ html(lang='en')
       meta(name='author', content=locals.owner)
       meta(name='viewport', content='width=device-width, initial-scale=1.0')
       meta(
-        name='google-site-verification' 
+        name='google-site-verification'
         content='LjoyQzPO6GNPYkjT8aMpI_vsxY7N2iW3Jqet5mkPveY'
       )
       block page-description
 
       link(rel='stylesheet', href='/css/site.css')
       link(
-        href='http://fonts.googleapis.com/css?family=Inconsolata|PT+Sans',
+        href='http://fonts.googleapis.com/css?family=Inconsolata|Raleway|Lora:400',
         rel='stylesheet',
         type='text/css'
       )
       link(rel='shortcut icon',href='/favicon.ico')
       link(rel='apple-touch-icon', href='/apple-touch-icon.png')
       link(
-        rel='alternate', 
-        href=locals.url+'/feed.xml', 
-        type='application/rss+xml', 
+        rel='alternate',
+        href=locals.url+'/feed.xml',
+        type='application/rss+xml',
         title=locals.description
       )
-     
+
       //if lt IE 9
         script(src='//html5shiv.googlecode.com/svn/trunk/html5.js')
         script(defer=true, src='js/libs/respond.min.js')
 
   body
-    #main(role='main')
-        header.banner.clearfix
-          block header
-            h1
-              a(href='/') #{ locals.owner }
-
+    header.banner.cf.center
+      block header
         //- Desktop Menu
-        nav.main_nav
-          for item in locals.menu
-            a(href=item.url, title=item.description) #{ item.name }
+        nav
+          ul
+            for item in locals.menu
+              li
+                a.internal(href=item.url, title=item.description) #{ item.name }
+        div
+          h1
+            a.internal(href='/') #{ locals.owner }
+          h3
+            | Front-End Developer
 
-        section.content
-          block main                                                  
-    footer
-      | Powered By 
-      a(href='http://jnordberg.github.com/wintersmith/') Wintersmith 
-      & 
+
+
+    section.content.center.cf
+      block main
+
+    div.me
+      img(
+        src="https://1.gravatar.com/avatar/6fbcd51cb382d04eb0ba1b7e6e9dd108?d=https%3A%2F%2Fidenticons.github.com%2F4f3f829c99972f89b41aff400c48b794.png&s=125"
+        height="125"
+        width="125"
+        alt="Alex Normand")
+
+      ul.social
+        li
+          i.icon-github
+          a(href="https://github.com/alexnormand") Github
+
+        li
+          i.icon-twitter-sign
+          a(href="https://twitter.com/normand_alex") Twitter
+        li
+          i.icon-linkedin-sign
+          a(href="linkedin.com/pub/alex-normand/41/244/197") Linkedin
+        li
+          i.icon-envelope-alt
+          a(href="mailto:alex@alexnormand.com") mail
+
+    footer.center.cf
+      | Powered By
+      a(href='http://jnordberg.github.com/wintersmith/') Wintersmith
+      &
       a(
         href='http://code.google.com/appengine/',
         title='Google App Engine'
@@ -62,8 +90,8 @@ html(lang='en')
       script(
         data-main='/js/main',
         src='/js/libs/require/require.js'
-      )  
+      )
     - else
       script(async, src="/js/main.js")
-        
-        
+
+

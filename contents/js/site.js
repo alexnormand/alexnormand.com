@@ -1,4 +1,4 @@
-define(['jquery', 'prettify', 'noisy'], function($, prettify) {
+define(['jquery', 'prettify'], function($, prettify) {
   var site  = {
 
     //highlight code blocks
@@ -66,13 +66,6 @@ define(['jquery', 'prettify', 'noisy'], function($, prettify) {
           });
         }, 1000);
       }
-
-      // Add noise effect to the background
-      $('body').noisy({
-        'intensity' : 0.2,
-        'size' : 200,
-        'opacity' : 0.06
-      });
 
       this.prettify();
     }
