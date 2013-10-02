@@ -81,6 +81,7 @@ header.banner
 
   li
     display: block
+    padding-bottom: 3px
 
   a
     position: relative
@@ -121,7 +122,7 @@ footer
       color: #333
 
   p
-    font-size: 20px
+    font-size: 19px
     line-height: 33px
     text-align: justify
 
@@ -185,11 +186,11 @@ h1.title
 section.content > article.post header
   margin-bottom: 45px
 
-// article.post
-//   h2, h3
-//     margin: 30px 0 0 0
-//     color: #222
-//     font-size: 1.3em
+article.post
+  h2, h3
+    margin: 30px 0 0 0
+    color: #222
+    border-bottom: 1px solid #DEDEDE
 
 //   p, ul
 //     font-size: 15px
@@ -232,31 +233,6 @@ h1 a:hover, h2 a:hover, h3 a:hover
   text-decoration: none
 
 
-.archives
-  ul.posts
-    margin-top: 24px
-
-  li.post
-    list-style-type: none
-    border-bottom: 1px dotted #ccc
-    padding: 12px 0
-
-    time
-      color: #999
-      text-shadow: 0px 2px 0px #fff
-      margin-right: 24px
-      display:block
-      float: left
-      width: 120px
-
-    a
-      float: left
-
-  ul.tags
-    float: right
-    margin-bottom:0
-
-
 /*===== CUSTOM CSS =====*/
 #main
   max-width: 800px
@@ -280,11 +256,9 @@ pre
     padding: 5px 20px
 
   .year
-    font-size: 18px
     margin-top: 10px
 
     ul
-      font-size: 85%
       margin: 0
 
 
