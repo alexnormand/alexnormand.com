@@ -30,8 +30,9 @@ a.internal
       text-decoration: none
 
 
-header.banner.center
+header.banner
   font-family: 'Raleway'
+  margin-top : 20px
 
   nav
     float: right
@@ -100,11 +101,11 @@ footer
   text-align: center
   padding: 20px
 
+  a
+    padding: 0 5px
+
 
 .content
-  a
-    text-decoration: none
-
   p
     a:hover
       text-decoration: underline
@@ -227,7 +228,7 @@ ul.tags
      &:hover
        color: #222
 
-h1 a, h2 a, h3 a
+h1 a:hover, h2 a:hover, h3 a:hover
   text-decoration: none
 
 
@@ -258,8 +259,8 @@ h1 a, h2 a, h3 a
 
 /*===== CUSTOM CSS =====*/
 #main
-  width: 800px
-  margin: 11px auto
+  max-width: 800px
+  margin: 0 auto
 
 
 pre
@@ -296,18 +297,36 @@ pre
    MEDIA QUERIES
   ===============*/
 
-@media only screen and (max-width: 800px) {
-    #main, img {
-      width: 100%;
+@media only screen and (max-width: 1150px) {
+  .me {
+    position: static;
+  }
+
+  .me img {
+      width: inherit;
+      float: left;
     }
+
+  .social {
+    padding: 15px;
+    margin: 10px;
+    float: left;
+  }
 }
 
-@media print {
-    body, a, footer  {
-       text-shadow: none;
-      }
 
-    .banner h1, a {
-      color: DarkSlateGrey;
+
+@media only screen and (max-width: 800px) {
+    #main, img {
+      width: 95%;
     }
+
+    header.banner {
+      text-align: center;
+    }
+
+    header.banner nav {
+      float: none;
+    }
+
 }
