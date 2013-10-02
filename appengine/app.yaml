@@ -1,13 +1,14 @@
 # boilerplate server config for google app engine
 # from darktable aka Calvin Rien
 # http://forrst.com/posts/Host_a_Static_HTML_Site_on_Google_App_Engine-BlA
-# 
+#
 # Note: file names are case-sensitive and spaces in paths is not supported.
 
 application: anormnd
 version: 1
-runtime: python
+runtime: python27
 api_version: 1
+threadsafe: true
 
 default_expiration: "30d"
 
@@ -188,7 +189,7 @@ handlers:
 # audio files
 - url: /(.*\.(mid|midi|mp3|wav))
   static_files: static/\1
-  upload: static/(.*\.(mid|midi|mp3|wav))  
+  upload: static/(.*\.(mid|midi|mp3|wav))
 
 # windows files
 - url: /(.*\.(doc|exe|ppt|rtf|xls))
@@ -217,4 +218,4 @@ handlers:
   static_files: static/\1/index.html
   upload: static/(.*)/index.html
   expiration: "15m"
-  
+
