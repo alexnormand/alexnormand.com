@@ -66,9 +66,9 @@ header.banner
   clear: both
 
 .me
-  position: fixed
-  top: 23px
-  left: 23px
+  position: absolute
+  left: -175px
+  top: 0
 
 .me img
   border-radius: 50%
@@ -236,6 +236,7 @@ h1 a:hover, h2 a:hover, h3 a:hover
 #main
   max-width: 800px
   margin: 0 auto
+  position: relative
 
 
 pre
@@ -259,6 +260,15 @@ pre
 
     ul
       margin: 0
+
+::selection
+  color: #ddd
+  background: #9E084A
+
+::-moz-selection
+  color: #ddd
+  background: #9E084A
+
 
 
 @import "prettify"
