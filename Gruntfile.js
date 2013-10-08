@@ -10,11 +10,15 @@ module.exports = function (grunt) {
       wintersmithDir: [wintersmithBuildDir]
     },
     wintersmith: {
-      build: {},
+      build: {
+        options: {
+          config: 'wintersmith.json'
+        }
+      },
       preview: {
         options: {
           action: 'preview',
-          config: 'config-preview.json'
+          config: 'wintersmith-preview.json'
         }
       }
     },
