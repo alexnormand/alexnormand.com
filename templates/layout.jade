@@ -56,19 +56,10 @@ html(lang='en')
           alt="Alex Normand")
 
         ul.social
-          li
-            i.icon-github
-            a(href="https://github.com/alexnormand") Github
-
-          li
-            i.icon-twitter-sign
-            a(href="https://twitter.com/normand_alex") Twitter
-          li
-            i.icon-linkedin-sign
-            a(href="http://www.linkedin.com/pub/alex-normand/41/244/197") Linkedin
-          li
-            i.icon-envelope-alt
-            a(href="mailto:alex@alexnormand.com") mail
+          for profile in locals.social
+            li
+              i(class=profile.icon)
+              a(href=profile.url) #{ profile.name }
 
       footer.cf
         p

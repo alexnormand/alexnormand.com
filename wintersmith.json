@@ -27,6 +27,28 @@
         "description": "About ",
         "url": "/about"
       }
+    ],
+    "social": [
+      {
+        "name": "Github",
+        "icon": "icon-github",
+        "url": "https://github.com/alexnormand"
+      },
+      {
+        "name": "Twitter",
+        "icon": "icon-twitter-sign",
+        "url": "https://twitter.com/normand_alex"
+      },
+      {
+        "name": "Linkedin",
+        "icon": "icon-linkedin-sign",
+        "url": "http://www.linkedin.com/pub/alex-normand/41/244/197"
+      },
+      {
+        "name": "mail",
+        "icon": "icon-envelope-alt",
+        "url": "mailto:alex@alexnormand.com"
+      }
     ]
   },
   "require": {
