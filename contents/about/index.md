@@ -23,7 +23,7 @@ This site is powered by [Wintersmith](http://jnordberg.github.com/wintersmith/),
 website generator written in [CoffeeScript](http://coffeescript.org/) which supports powerful  template languages
 such as [Jade](http://jade-lang.com/).
 
-<br/> Please feel free to contact me at: <mailto:anormnd@gmail.com>
+<br/> Please feel free to contact me at: <mailto:alex@alexnormand.com>
 
 
 You can also find me on:
