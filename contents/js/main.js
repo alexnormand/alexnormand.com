@@ -1,7 +1,7 @@
 require.config({
   paths: {
-    jquery: 'libs/jquery',
-    prettify: 'libs/prettify',
+    jquery: 'libs/jquery/jquery',
+    prettify: 'libs/google-code-prettify/src/prettify',
     site: 'site'
   }
 });

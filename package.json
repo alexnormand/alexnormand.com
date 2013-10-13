@@ -1,7 +1,8 @@
 {
   "dependencies": {
     "underscore": "~1.5.1",
-    "wintersmith-stylus": "~0.4.0"
+    "wintersmith-stylus": "~0.4.0",
+    "bower": "~1.2.7"
   },
   "repository": "none",
   "devDependencies": {

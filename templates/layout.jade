@@ -26,7 +26,6 @@ html(lang='en')
 
       //if lt IE 9
         script(src='//html5shiv.googlecode.com/svn/trunk/html5.js')
-        script(defer=true, src='js/libs/respond.min.js')
 
   body
     div#main
@@ -75,7 +74,7 @@ html(lang='en')
     - if (locals.mode == 'development')
       script(
         data-main='/js/main',
-        src='/js/libs/require/require.js'
+        src='/js/libs/requirejs/require.js'
       )
     - else
       script(async, src="/js/main.js")
