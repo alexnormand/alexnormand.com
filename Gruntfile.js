@@ -49,7 +49,7 @@ module.exports = function (grunt) {
             cwd:  wintersmithBuildDir,
             src: [
               'index.html',
-              'favion.ico',
+              'favicon.ico',
               'apple-touch-icon.png'
             ],
             dest: appengineStaticdir
