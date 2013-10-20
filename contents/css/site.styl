@@ -51,6 +51,9 @@ header.banner
     a
       font-size: 45px
 
+@import "prettify"
+@import "font-awesome"
+@import "animate"
 
 .center
   max-width: 800px
@@ -240,14 +243,13 @@ h1 a:hover, h2 a:hover, h3 a:hover
 
 
 pre
+  background-color: #f2f2f2
+  border: 1px solid #ccc
+  border: 1px solid rgba(0, 0, 0, 0.15)
   border-radius: 0.3em
-  font-size: .9em
-  font-family: 'Inconsolata', monospace
   overflow-x: auto
   overflow-y: hidden
-  padding: 0.4em
-  line-height: 100%
-  background-color: #444
+  padding: 9.5px
 
 .archive
   ul
@@ -268,12 +270,6 @@ pre
 ::-moz-selection
   color: #ddd
   background: #9E084A
-
-
-
-@import "prettify"
-@import "font-awesome"
-@import "animate"
 
 
 /*===============
