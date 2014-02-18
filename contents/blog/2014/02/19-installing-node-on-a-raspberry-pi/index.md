@@ -17,8 +17,8 @@ Download the binary archive and Extract it
 ------------------------------------------
 First of all you must download the latest node binary archive that is compatible with
 the Raspberry Pi's ARM-based architecture.
-I wrote **[nodepi](http://nodepi.herokuapp.com)** a little express app which lists all of the
-node versions which provide an official *arm-pi* binary archive.
+I wrote **[nodepi](http://nodepi.herokuapp.com)**, a little express app which lists all of the
+node versions that provide an official *arm-pi* binary archive.
 
 Simply grab the version you want (remember that node uses the
 [even/odd](http://en.wikipedia.org/wiki/Software_versioning#Odd-numbered_versions_for_development_releases)
@@ -54,7 +54,7 @@ $ export PATH
 ```
 
 
-To check that node and npm have been correctly added to your path:
+To check that node and npm have been correctly added to your path
 
 ```sh
 $ node -v
