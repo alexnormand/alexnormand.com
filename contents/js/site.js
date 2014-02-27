@@ -1,18 +1,36 @@
-define(['jquery', 'prettify'], function($, prettify) {
-  var site  = {
+define(['prettify'], function(prettify) {
+
+  var toArray = function(arrayLike) {
+    return [].slice.call(arrayLike);
+  };
+
+  var find = function(selector, context) {
+    return (context || document).querySelector(selector);
+  };
+
+  var findAll = function(selector, context) {
+    return toArray((context || document).querySelectorAll(selector));
+  };
+
+  var site = {
 
     //highlight code blocks
     prettify: function() {
-      $('pre code').each(function() {
-        var language = $(this).attr('class');
 
-        if(language) {
-            language = language.split(' ')[0];
-            $(this)
-              .removeClass(language)
-              .addClass('lang-' + language);
+      var snippets = findAll('pre code');
+
+      snippets.forEach(function(snippet) {
+        var language = snippet.className;
+
+        if (language) {
+          language = language.split(' ')[0];
+
+          snippet.classList.remove(language);
+          snippet.classList.add('lang-' + language);
         }
-        $(this).addClass('prettyprint');
+
+        snippet.classList.add('prettyprint');
+
       });
 
       prettyPrint();
@@ -25,43 +43,40 @@ define(['jquery', 'prettify'], function($, prettify) {
                     ? link.href + 'index.html'
                     : link.href + '/index.html';
 
-      $.get(url, function(data) {
+      var xhr = new XMLHttpRequest();
 
-        var pfx = ["webkitAnimationEnd", "mozAnimationEnd", "MSAnimationEnd", "oAnimationEnd", "animationend"],
-            classes= ['animated', 'fadeInLeft'].join(' ');
+      xhr.open('GET', url);
+      xhr.responseType = 'document';
 
+      xhr.onload = function() {
+        var oldContent = find('section.content');
+        var newContent = find('.content', this.response);
 
-        if (window.location.host === 'www.alexnormand.com') {
-          window._gaq.push(['_trackPageview', url]);
-        }
+        window._gaq.push(['_trackPageview', url]);
 
-        $('section.content').replaceWith($(data).find('.content'));
-        $('section.content').addClass(classes);
-
-        $('section.content').on(pfx.join(' '), function() {
-          $(this).removeClass(classes);
-        });
-
-        $(window).scrollTop(0); //for mobile browsers
-        $('title').text($(data).filter('title').text()); //set new page title
-
+        oldContent.parentNode.replaceChild(newContent, oldContent);
+        find('title').textContent = find('title', this.response).textContent;
         site.prettify();
-      });
+
+        newContent.className += ' animated fadeInLeft';
+      };
+
+      xhr.send();
     },
 
     init: function() {
       if (!!(window.history && history.pushState)) {
-        $('#main').on('click', 'a', function(e){
+        find('#main').addEventListener('click', function(e) {
           var link = e.target;
-          if (link.host === window.location.host) {
+          if (link.nodeName.toLowerCase() === 'a') {
+            e.preventDefault();
             site.updateMainContent(link);
             history.pushState(null, null, link.href);
-            e.preventDefault();
           }
         });
 
         window.setTimeout(function() {
-          $(window).on('popstate', function(e) {
+          window.addEventListener('popstate', function(e) {
             site.updateMainContent(window.location);
           });
         }, 1000);

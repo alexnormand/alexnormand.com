@@ -16,7 +16,6 @@
   ],
   "dependencies": {
     "google-code-prettify": "~1.0.0",
-    "jquery": "1.10.2",
     "requirejs": "~2.1.8"
   }
 }
