@@ -1,23 +1,23 @@
-.animated 
+.animated
   animation-fill-mode: both
   animation-duration: 1s
   animation-timing-function: ease-in-out
 
 
-@keyframes fadeInLeft 
-  0% 
+@keyframes fadeInLeft
+  0%
     opacity: 0
     transform: translateX(-200px) rotate(-5deg)
 
   50%
     transform: translateX(30px)
-    
-  100% 
+
+  100%
     opacity: 1
     transform: translateX(0) rotate(0deg)
-  
 
-.fadeInLeft 
+
+.fadeInLeft
   animation-name: fadeInLeft
 
 
@@ -28,4 +28,13 @@
   50%
     transform: rotate(360deg)
 
+@keyframes tumbleMe
+  0%
+    transform: rotate(0deg)
+    backface-visibility: hidden
 
+  50%
+    border-radius: 25%
+
+  100%
+    transform: rotate(720deg)
