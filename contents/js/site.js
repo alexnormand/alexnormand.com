@@ -17,20 +17,15 @@ define(['prettify'], function(prettify) {
     //highlight code blocks
     prettify: function() {
 
-      var snippets = findAll('pre code');
-
-      snippets.forEach(function(snippet) {
+      findAll('pre code').forEach(function(snippet) {
         var language = snippet.className;
 
         if (language) {
-          language = language.split(' ')[0];
-
           snippet.classList.remove(language);
-          snippet.classList.add('lang-' + language);
+          snippet.parentNode.classList.add(language);
         }
 
-        snippet.classList.add('prettyprint');
-
+        snippet.parentNode.classList.add('prettyprint');
       });
 
       prettyPrint();
