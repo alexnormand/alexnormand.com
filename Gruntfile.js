@@ -39,13 +39,6 @@ module.exports = function (grunt) {
           },
           {
             expand: true,
-            cwd:  wintersmithBuildDir +'/font',
-            src: ['**'],
-            dest: appengineStaticdir +'/font'
-          },
-
-          {
-            expand: true,
             cwd:  wintersmithBuildDir,
             src: [
               'index.html',

@@ -57,7 +57,7 @@ html(lang='en')
         ul.social
           for profile in locals.social
             li
-              i(class=profile.icon)
+              i(class=profile.name.toLowerCase())
               a(href=profile.url) #{ profile.name }
 
       footer.cf
