@@ -7,8 +7,8 @@ template: article.jade
 ---
 
 Several months ago I acquired my very first [Raspberry PI](http://www.raspberrypi.org/).
-One of the first things I wanted to try is how well node runs on a Raspberry Pi.
-Node works like a charm and installing it on a Raspberry is actually pretty easy and straightforward.
+One of the first things I wanted to try is how well node runs on it.
+Node works like a charm and installing it on a Raspberry Pi is actually pretty easy and straightforward.
 
 <span class="more"></span>
 
@@ -49,8 +49,8 @@ and simply add that location to your path in your <code>.bash_profile</code> fil
 
 
 ```sh
-$ PATH=$PATH:/home/pi/node-vx.x.x/bin
-$ export PATH
+PATH=$PATH:/home/pi/node-vx.x.x/bin
+export PATH
 ```
 
 
