@@ -47,7 +47,7 @@ define(['prettify'], function(prettify) {
         var oldContent = find('section.content');
         var newContent = find('.content', this.response);
 
-        window._gaq.push(['_trackPageview', url]);
+        _gaq.push(['_trackPageview', url]);
 
         oldContent.parentNode.replaceChild(newContent, oldContent);
         find('title').textContent = find('title', this.response).textContent;
@@ -60,19 +60,19 @@ define(['prettify'], function(prettify) {
     },
 
     init: function() {
-      if (!!(window.history && history.pushState)) {
+      if (!!(history && history.pushState)) {
         find('#main').addEventListener('click', function(e) {
           var link = e.target;
-          if (link.nodeName.toLowerCase() === 'a') {
+          if (link.nodeName.match(/a/i) && link.host === location.host) {
             e.preventDefault();
             site.updateMainContent(link);
             history.pushState(null, null, link.href);
           }
         });
 
-        window.setTimeout(function() {
+        setTimeout(function() {
           window.addEventListener('popstate', function(e) {
-            site.updateMainContent(window.location);
+            site.updateMainContent(location);
           });
         }, 1000);
       }
