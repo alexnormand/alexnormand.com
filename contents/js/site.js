@@ -1,5 +1,4 @@
 define(['prettify'], function(prettify) {
-
   var toArray = function(arrayLike) {
     return [].slice.call(arrayLike);
   };
@@ -25,7 +24,7 @@ define(['prettify'], function(prettify) {
           snippet.parentNode.classList.add(language);
         }
 
-        snippet.parentNode.classList.add('prettyprint');
+        snippet.parentNode.classList.add('prettyprint', 'linenums');
       });
 
       prettyPrint();
@@ -53,7 +52,7 @@ define(['prettify'], function(prettify) {
         find('title').textContent = find('title', this.response).textContent;
         site.prettify();
 
-        newContent.className += ' animated fadeInLeft';
+        newContent.classList.add('animated','fadeInLeft');
       };
 
       xhr.send();
@@ -63,7 +62,9 @@ define(['prettify'], function(prettify) {
       if (!!(history && history.pushState)) {
         find('#main').addEventListener('click', function(e) {
           var link = e.target;
-          if (link.nodeName.match(/a/i) && link.host === location.host) {
+          if (link.nodeName.match(/a/i) &&
+              link.host === location.host &&
+              !link.classList.contains('external')) {
             e.preventDefault();
             site.updateMainContent(link);
             history.pushState(null, null, link.href);
