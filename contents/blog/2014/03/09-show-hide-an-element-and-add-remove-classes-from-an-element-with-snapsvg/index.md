@@ -97,9 +97,7 @@ To use these functions:
 
 ```
 
-
-
-Check out this <a href="/blog/2014/03/09-snap/demo.html" class="external">demo</a>
+Check out this <a href="/blog/2014/03/09-show-hide-an-element-and-add-remove-classes-from-an-element-with-snapsvg/demo.html" class="external">demo</a>
 to see it in action!
 
 ```js
