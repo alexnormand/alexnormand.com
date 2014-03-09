@@ -8,7 +8,7 @@ template: article.jade
 
 These last couple of weeks I've been working a lot with [Snap.svg](http://snapsvg.io).
 Snap.svg is a revamped version of [Raphael](http://raphaeljs.com) which
-ony supports modern browsers, i.e. those who fully support [SVG](http://www.w3.org/TR/SVG/).
+only supports modern browsers, i.e. those who fully support [SVG](http://www.w3.org/TR/SVG/).
 This allows Snap.svg to support all of SVG's cool features such as masking, clipping, groups, ...
 
 <span class="more"></span>
