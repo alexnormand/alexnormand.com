@@ -1,0 +1,151 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Snap.svg demo</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    circle {
+      transition: all 1.6s ease;
+    }
+
+    rect {
+      -webkit-transform: none;
+      -webkit-transform-origin: left top;
+      -webkit-animation-fill-mode: both;
+      -webkit-animation-duration: 1s;
+      -webkit-animation-timing-function: ease-in-out;
+
+      transform: none;
+      transform-origin: left top;
+      animation-fill-mode: both;
+      animation-duration: 1s;
+      animation-timing-function: ease-in-out;
+    }
+
+    g {
+      cursor: pointer;
+    }
+
+    .red {
+      fill: #C11;
+    }
+
+    .twirl {
+      -webkit-animation-name: twirl;
+      animation-name: twirl;
+    }
+
+    @-webkit-keyframes twirl {
+      0% {
+        -webkit-transform: rotate(0deg);
+      }
+      100% {
+        -webkit-transform: rotate(360deg);
+        fill: #73AEF1;
+      }
+    }
+
+    @keyframes twirl {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+  </style>
+</head>
+<body>
+<script src="//cdn.jsdelivr.net/snap.svg/0.2.0/snap.svg-min.js"></script>
+<script>
+Snap.plugin(function (Snap, Element) {
+  // displays the element
+  Element.prototype.show = function() {
+    this.attr('display', '');
+  };
+
+  // hides the element
+  Element.prototype.hide = function() {
+    this.attr('display', 'none');
+  };
+
+  // toggles the element's visibility
+  Element.prototype.toggle = function(showOrHide) {
+    showOrHide = showOrHide === undefined
+                   ? this.attr('display') === 'none'
+                   : !!showOrHide;
+
+    this.attr('display', (showOrHide ? '' : 'none' ));
+  };
+
+  // adds one or more space-separated class names.
+  Element.prototype.addClass = function() {
+    var classes = arguments[0].split(' ');
+
+    for (var i = 0; i < classes.length; i++) {
+      this.node.classList.add(classes[i]);
+    }
+  };
+
+  // removes one or more space-separated class names.
+  Element.prototype.removeClass = function() {
+    var classes = arguments[0].split(' ');
+
+    for (var i = 0; i < classes.length; i++) {
+      this.node.classList.remove(classes[i]);
+    }
+  };
+
+  // toggles one or more space-separated class names.
+  Element.prototype.toggleClass = function(c) {
+    var classes = arguments[0].split(' ');
+
+    for (var i = 0; i < classes.length; i++) {
+      this.node.classList.toggle(classes[i]);
+    }
+  };
+});
+
+(function() {
+  var width  = window.innerWidth;
+  var height = window.innerHeight;
+
+  var s = Snap(width, height);
+  var circle = s.circle(width/2, height/2, width/8).attr({
+    'fill'  : '#bada55',
+    'stroke': '#333',
+    'stroke-width': '5'
+  });
+
+  var square = s.rect(width/6, height/2, width/10, width/10, 35).attr({
+    'fill': 'pink',
+    'stroke': '#333',
+    'stroke-width': '5px'
+  });
+
+  var text = s.text(width/2 + width/46, height/2 + width/46, 'click me').attr({
+    'font-size': '25px',
+    'font-family': 'sans',
+    'text-anchor': 'middle'
+  });
+
+  var group = s.group(circle, text);
+
+  group.click(function() {
+    square.toggleClass('twirl');
+    circle.toggleClass('red');
+    text.toggle();
+  });
+
+}());
+</script>
+</body>
+</html>
+
+
