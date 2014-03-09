@@ -52,7 +52,7 @@ define(['prettify'], function(prettify) {
         find('title').textContent = find('title', this.response).textContent;
         site.prettify();
 
-        newContent.classList.add('animated','fadeInLeft');
+        newContent.classList.add('animated', 'fadeIn');
       };
 
       xhr.send();
