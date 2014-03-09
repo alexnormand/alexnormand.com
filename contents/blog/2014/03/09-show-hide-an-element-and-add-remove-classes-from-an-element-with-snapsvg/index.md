@@ -109,7 +109,7 @@ to see it in action!
   var circle = s.circle(width/2, height/2, width/8).attr({
     'fill'  : '#bada55',
     'stroke': '#333',
-    'stroke-width': '5'
+    'stroke-width': '5px'
   });
 
   var square = s.rect(width/6, height/2, width/10, width/10, 35).attr({
