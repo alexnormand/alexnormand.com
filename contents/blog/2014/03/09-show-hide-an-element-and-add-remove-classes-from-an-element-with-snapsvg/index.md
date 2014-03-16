@@ -46,27 +46,24 @@ Snap.plugin(function (Snap, Element) {
   Element.prototype.addClass = function() {
     var classes = arguments[0].trim().split(whitespace);
 
-    for (var i = 0; i < classes.length; i++) {
-      this.node.classList.add(classes[i]);
-    }
+    DOMTokenList.prototype.add.apply(this.node.classList, classes);
   };
 
   // removes one or more space-separated class names.
   Element.prototype.removeClass = function() {
     var classes = arguments[0].trim().split(whitespace);
 
-    for (var i = 0; i < classes.length; i++) {
-      this.node.classList.remove(classes[i]);
-    }
+    DOMTokenList.prototype.remove.apply(this.node.classList, classes);
   };
 
-  // toggles one or more space-separated class names.
-  Element.prototype.toggleClass = function(c) {
-    var classes = arguments[0].trim().split(whitespace);
+  // toggles the specified class name.
+  Element.prototype.toggleClass = function(clazz, toggle) {
+    clazz  = clazz.trim();
+    toggle = toggle === undefined
+               ? !this.node.classList.contains(clazz)
+               : !!toggle;
 
-    for (var i = 0; i < classes.length; i++) {
-      this.node.classList.toggle(classes[i]);
-    }
+    this.node.classList.toggle(clazz, toggle);
   };
 });
 ```
@@ -95,7 +92,9 @@ To use these functions:
   rect.removeClass('class1 class2 class3');
 
   // toggle classes
-  rect.toggleClass('class1 class2 class3');
+  rect.toggleClass('class1');
+  rect.toggleClass('class1', true);
+  rect.toggleClass('class1', false);
 
 ```
 
