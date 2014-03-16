@@ -21,6 +21,8 @@ I extended the <code>Element</code> prototype like so:
 
 ```js
 Snap.plugin(function (Snap, Element) {
+  var whitespace = /[\x20\t\r\n\f]+/;
+
   // displays the element
   Element.prototype.show = function() {
     this.attr('display', '');
@@ -42,7 +44,7 @@ Snap.plugin(function (Snap, Element) {
 
   // adds one or more space-separated class names.
   Element.prototype.addClass = function() {
-    var classes = arguments[0].split(' ');
+    var classes = arguments[0].trim().split(whitespace);
 
     for (var i = 0; i < classes.length; i++) {
       this.node.classList.add(classes[i]);
@@ -51,7 +53,7 @@ Snap.plugin(function (Snap, Element) {
 
   // removes one or more space-separated class names.
   Element.prototype.removeClass = function() {
-    var classes = arguments[0].split(' ');
+    var classes = arguments[0].trim().split(whitespace);
 
     for (var i = 0; i < classes.length; i++) {
       this.node.classList.remove(classes[i]);
@@ -60,7 +62,7 @@ Snap.plugin(function (Snap, Element) {
 
   // toggles one or more space-separated class names.
   Element.prototype.toggleClass = function(c) {
-    var classes = arguments[0].split(' ');
+    var classes = arguments[0].trim().split(whitespace);
 
     for (var i = 0; i < classes.length; i++) {
       this.node.classList.toggle(classes[i]);
@@ -188,6 +190,7 @@ g {
   }
   100% {
     transform: rotate(360deg);
+    fill: #73AEF1;
   }
 }
 ```
