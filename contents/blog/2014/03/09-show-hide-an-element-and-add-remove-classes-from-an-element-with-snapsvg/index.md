@@ -230,7 +230,7 @@ g {
 
 ### Update: 2014/03/29
 After doing a little more research [1], it turns out that <code>classList</code> on SVG Elements
-is not supported in IE, Android Browser.
+is not supported in IE, Android Browser and Safari.
 
 I updated <code>addClass</code>, <code>removeClass</code> and <code>toggleClass</code> for full browser support.
 (all browsers that support ECMAScript 5).
