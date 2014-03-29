@@ -21,7 +21,31 @@ I extended the <code>Element</code> prototype like so:
 
 ```js
 Snap.plugin(function (Snap, Element) {
-  var whitespace = /[\x20\t\r\n\f]+/;
+  var whitespace = /[\x20\t\r\n\f]+/g;
+
+  var toggleClasseNames = function(classes, className, add) {
+    classes = classes.trim().split(whitespace);
+    className = className.replace(whitespace, ' ');
+
+    var newClassName = classes.reduce(function(prevClassName, clazz) {
+      var clazzIndex = prevClassName.indexOf(' ' + clazz + ' ');
+      clazz = clazz + ' ';
+
+      if (add) {
+        if (clazzIndex === -1) {
+          return prevClassName + clazz;
+        }
+      } else {
+        if (clazzIndex !== -1) {
+          return prevClassName.replace(clazz, '');
+        }
+      }
+    }, ' ' + className + ' ');
+
+    if (className !== newClassName) {
+      return newClassName.trim();
+    }
+  };
 
   // displays the element
   Element.prototype.show = function() {
@@ -43,27 +67,36 @@ Snap.plugin(function (Snap, Element) {
   };
 
   // adds one or more space-separated class names.
-  Element.prototype.addClass = function() {
-    var classes = arguments[0].trim().split(whitespace);
+  Element.prototype.addClass = function(classes) {
+    var newClassName = toggleClasseNames(classes, this.node.className.baseVal, true);
 
-    DOMTokenList.prototype.add.apply(this.node.classList, classes);
+    if (newClassName !== undefined) {
+      this.node.className.baseVal = newClassName
+    }
   };
 
   // removes one or more space-separated class names.
-  Element.prototype.removeClass = function() {
-    var classes = arguments[0].trim().split(whitespace);
+  Element.prototype.removeClass = function(classes) {
+    var newClassName = toggleClasseNames(classes, this.node.className.baseVal, false);
 
-    DOMTokenList.prototype.remove.apply(this.node.classList, classes);
+    if (newClassName !== undefined) {
+      this.node.className.baseVal = newClassName;
+    }
   };
 
   // toggles the specified class name.
   Element.prototype.toggleClass = function(clazz, toggle) {
-    clazz  = clazz.trim();
+    var className = ' ' + this.node.className.baseVal.replace(whitespace, ' ') + ' ';
+    clazz = clazz.trim();
     toggle = toggle === undefined
-               ? !this.node.classList.contains(clazz)
+               ? className.indexOf(' ' + clazz + ' ') === -1
                : !!toggle;
 
-    this.node.classList.toggle(clazz, toggle);
+    if (toggle) {
+      this.addClass(clazz);
+    } else {
+      this.removeClass(clazz);
+    }
   };
 });
 ```
@@ -193,3 +226,14 @@ g {
   }
 }
 ```
+
+
+### Update: 2014/03/29
+After doing a little more research [1] it turns out that <code>classList</code> on SVG Element
+is not supported in IE, Android Browser.
+
+I updated <code>addClass</code>, <code>removeClass</code> and <code>toggleClass</code> for full browser support.
+(all browsers that support ECMAScript 5).
+
+
+[1] [caniuse](http://caniuse.com/#search=classList)
