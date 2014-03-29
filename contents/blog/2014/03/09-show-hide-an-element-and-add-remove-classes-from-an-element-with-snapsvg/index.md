@@ -23,7 +23,7 @@ I extended the <code>Element</code> prototype like so:
 Snap.plugin(function (Snap, Element) {
   var whitespace = /[\x20\t\r\n\f]+/g;
 
-  var toggleClasseNames = function(classes, className, add) {
+  var toggleClasses = function(classes, className, add) {
     classes = classes.trim().split(whitespace);
     className = className.replace(whitespace, ' ');
 
@@ -68,7 +68,7 @@ Snap.plugin(function (Snap, Element) {
 
   // adds one or more space-separated class names.
   Element.prototype.addClass = function(classes) {
-    var newClassName = toggleClasseNames(classes, this.node.className.baseVal, true);
+    var newClassName = toggleClasses(classes, this.node.className.baseVal, true);
 
     if (newClassName !== undefined) {
       this.node.className.baseVal = newClassName
@@ -77,7 +77,7 @@ Snap.plugin(function (Snap, Element) {
 
   // removes one or more space-separated class names.
   Element.prototype.removeClass = function(classes) {
-    var newClassName = toggleClasseNames(classes, this.node.className.baseVal, false);
+    var newClassName = toggleClasses(classes, this.node.className.baseVal, false);
 
     if (newClassName !== undefined) {
       this.node.className.baseVal = newClassName;
