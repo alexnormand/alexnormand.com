@@ -40,7 +40,7 @@ Snap.plugin(function (Snap, Element) {
           return prevClassName.replace(clazz, '');
         }
       }
-      
+
       return prevClassName;
     }, ' ' + className + ' ');
 
@@ -231,11 +231,11 @@ g {
 
 
 ### Update: 2014/03/29
-After doing a little more research [1], it turns out that <code>classList</code> on SVG Elements
+After doing a little more [research](http://caniuse.com/#search=classList), it turns out that <code>classList</code> on SVG Elements
 is not supported in IE, Android Browser and Safari.
 
 I updated <code>addClass</code>, <code>removeClass</code> and <code>toggleClass</code> for full browser support.
 (all browsers that support ECMAScript 5).
 
-
-[1] [caniuse](http://caniuse.com/#search=classList)
+### Update: 2014/05/07
+[Dmitry](http://dmitry.baranovskiy.com/) has [recently](https://github.com/adobe-webplatform/Snap.svg/commit/51afce7824bb2ea99811950d8170e7cd488e8789) added The <strong><code>addClass</code></strong>, <strong><code>removeClass</code></strong> and <strong><code>hasClass</code></strong> functions in Snap.svg's dev branch. So these new features should be available in the next stable release, making this plugin obsolete and irrelevant :).
