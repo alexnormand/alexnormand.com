@@ -40,6 +40,8 @@ Snap.plugin(function (Snap, Element) {
           return prevClassName.replace(clazz, '');
         }
       }
+      
+      return prevClassName;
     }, ' ' + className + ' ');
 
     if (className !== newClassName) {
