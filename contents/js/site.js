@@ -53,6 +53,7 @@ define(['prettify'], function(prettify) {
         site.prettify();
 
         newContent.classList.add('animated', 'fadeIn');
+        window.scrollTo(0, 0);
       };
 
       xhr.send();
