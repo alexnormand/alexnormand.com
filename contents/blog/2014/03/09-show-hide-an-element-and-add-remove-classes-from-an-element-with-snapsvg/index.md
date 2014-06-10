@@ -239,3 +239,6 @@ I updated <code>addClass</code>, <code>removeClass</code> and <code>toggleClass<
 
 ### Update: 2014/05/07
 [Dmitry](http://dmitry.baranovskiy.com/) has [recently](https://github.com/adobe-webplatform/Snap.svg/commit/51afce7824bb2ea99811950d8170e7cd488e8789) added The <strong><code>addClass</code></strong>, <strong><code>removeClass</code></strong> and <strong><code>hasClass</code></strong> functions in Snap.svg's dev branch. So these new features should be available in the next stable release, making this plugin obsolete and irrelevant :).
+
+### Update: 2014/06/10
+As of version [0.3.0](https://github.com/adobe-webplatform/Snap.svg/blob/master/history.md), the <code>addClass</code>, <code>removeClass</code>, <code>toggleClass</code> and <code>hasClass</code> functions have been added.
