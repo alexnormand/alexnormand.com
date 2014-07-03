@@ -107,7 +107,7 @@ ResponseType and history.pushState seem really cool, but are they well supported
 
 
 Yes definitely! This technique works in all modern browsers and degrades gracefully in
-browsers (i.e. IE9 and old android versions).
+older browsers (i.e. IE9 and old android versions).
 
  * [responseType="document"](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/HTML_in_XMLHttpRequest#AutoCompatibilityTable)
  * [history](http://caniuse.com/#feat=history)
