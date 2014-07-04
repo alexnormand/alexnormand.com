@@ -35,17 +35,17 @@ We'll focus on the [document](http://www.w3.org/TR/XMLHttpRequest/#document-resp
 responseType. This will set the response type to be a document object rather than just plain text:
 
 ```js
-   var xhr = new XMLHttpRequest();
-   xhr.responseType = 'document';
+var xhr = new XMLHttpRequest();
+xhr.responseType = 'document';
 
-   xhr.open('GET', '/');
-   xhr.onload = function() {
-      var title = this.response.querySelector('title');
+xhr.open('GET', '/');
+xhr.onload = function() {
+  var title = this.response.querySelector('title');
 
-      console.log(title.textContent);
-   };
+  console.log(title.textContent);
+};
 
-   xhr.send();
+xhr.send();
 ```
 
 Copy this example in your dev tools console.
@@ -57,18 +57,18 @@ You can use this.response the exact same way you would use **<code>window.docume
 This is really powerful as you can basically use the xhr's response to replace any DOM node.
 
 ```js
-   var xhr = new XMLHttpRequest();
-   xhr.responseType = 'document';
+var xhr = new XMLHttpRequest();
+xhr.responseType = 'document';
 
-   xhr.open('GET', '/');
-   xhr.onload = function() {
-      var responseMain = this.response.querySelector('#main');
-      var currentMain  = document.querySelector('#main');
+xhr.open('GET', '/');
+xhr.onload = function() {
+  var responseMain = this.response.querySelector('#main');
+  var currentMain  = document.querySelector('#main');
 
-      currentMain.parentNode.replaceChild(responseMain, currentMain);
-   };
+  currentMain.parentNode.replaceChild(responseMain, currentMain);
+};
 
-   xhr.send();
+xhr.send();
 ```
 
 Copy this example in your dev tools, and see what happens then hit your browser's refresh button.
@@ -78,20 +78,20 @@ However the browser's URL remained unchanged, this is where **<code>history.push
 ## history.pushState
 
 ```js
-   var xhr = new XMLHttpRequest();
-   xhr.responseType = 'document';
+var xhr = new XMLHttpRequest();
+xhr.responseType = 'document';
 
-   xhr.open('GET', '/');
-   xhr.onload = function() {
-      var responseMain = this.response.querySelector('#main');
-      var currentMain  = document.querySelector('#main');
+xhr.open('GET', '/');
+xhr.onload = function() {
+  var responseMain = this.response.querySelector('#main');
+  var currentMain  = document.querySelector('#main');
 
-      currentMain.parentNode.replaceChild(responseMain, currentMain);
+  currentMain.parentNode.replaceChild(responseMain, currentMain);
 
-      history.pushState(null, null, '/');
-   };
+  history.pushState(null, null, '/');
+};
 
-   xhr.send();
+xhr.send();
 ```
 
 **<code>history.pushState(null, null, '/')</code>**
@@ -170,5 +170,4 @@ The demo uses the combination of **<code>responseType="document"</code>** and **
     }, 1000);
   }
 }())
-
 ```

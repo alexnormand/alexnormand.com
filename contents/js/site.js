@@ -24,7 +24,7 @@ define(['prettify'], function(prettify) {
           snippet.parentNode.classList.add(language);
         }
 
-        snippet.parentNode.classList.add('prettyprint', 'linenums');
+        snippet.parentNode.classList.add('prettyprint');
       });
 
       prettyPrint();
