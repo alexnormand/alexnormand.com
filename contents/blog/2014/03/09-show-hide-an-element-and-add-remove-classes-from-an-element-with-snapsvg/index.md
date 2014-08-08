@@ -106,31 +106,30 @@ Snap.plugin(function (Snap, Element) {
 To use these functions:
 
 ```js
-  var s = Snap(450, 450);
-  var rect = s.rect(150, 150, 75, 75);
+var s = Snap(450, 450);
+var rect = s.rect(150, 150, 75, 75);
 
-  // show rect
-  rect.show()
-  rect.toggle(true);
+// show rect
+rect.show()
+rect.toggle(true);
 
-  // hide rect
-  rect.hide()
-  rect.toggle(false);
+// hide rect
+rect.hide()
+rect.toggle(false);
 
-  // toggle rect
-  rect.toggle()
+// toggle rect
+rect.toggle()
 
-  // add classes to rect
-  rect.addClass('class1 class2 class3');
+// add classes to rect
+rect.addClass('class1 class2 class3');
 
-  // remove classes from rect
-  rect.removeClass('class1 class2 class3');
+// remove classes from rect
+rect.removeClass('class1 class2 class3');
 
-  // toggle classes
-  rect.toggleClass('class1');
-  rect.toggleClass('class1', true);
-  rect.toggleClass('class1', false);
-
+// toggle classes
+rect.toggleClass('class1');
+rect.toggleClass('class1', true);
+rect.toggleClass('class1', false);
 ```
 
 Check out this <a href="/blog/2014/03/09-show-hide-an-element-and-add-remove-classes-from-an-element-with-snapsvg/demo.html" class="external">demo</a>
@@ -241,4 +240,4 @@ I updated <code>addClass</code>, <code>removeClass</code> and <code>toggleClass<
 [Dmitry](http://dmitry.baranovskiy.com/) has [recently](https://github.com/adobe-webplatform/Snap.svg/commit/51afce7824bb2ea99811950d8170e7cd488e8789) added The <strong><code>addClass</code></strong>, <strong><code>removeClass</code></strong> and <strong><code>hasClass</code></strong> functions in Snap.svg's dev branch. So these new features should be available in the next stable release, making this plugin obsolete and irrelevant :).
 
 ### Update: 2014/06/10
-As of version [0.3.0](https://github.com/adobe-webplatform/Snap.svg/blob/master/history.md), the <code>addClass</code>, <code>removeClass</code>, <code>toggleClass</code> and <code>hasClass</code> functions have been added.
+As of version [0.3.0](https://github.com/adobe-webplatform/Snap.svg/blob/master/history.md), the <code>addClass</code>, <code>removeClass</code>, <code>toggleClass</code> and <code>hasClass</code> functions have been added to Snap.svg.
