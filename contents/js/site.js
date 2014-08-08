@@ -46,14 +46,14 @@ define(['prettify'], function(prettify) {
         var oldContent = find('section.content');
         var newContent = find('.content', this.response);
 
-        _gaq.push(['_trackPageview', url]);
-
         oldContent.parentNode.replaceChild(newContent, oldContent);
         find('title').textContent = find('title', this.response).textContent;
         site.prettify();
 
         newContent.classList.add('animated', 'fadeIn');
         window.scrollTo(0, 0);
+
+        ga('send', 'pageview', { 'page': url, 'title': find('title').textContent });
       };
 
       xhr.send();
