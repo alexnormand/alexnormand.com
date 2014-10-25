@@ -15,7 +15,9 @@ html(lang='en')
       )
       block page-description
 
-      link(rel='stylesheet', href='/css/site.css')
+      - if (locals.mode == 'development')
+        link(rel='stylesheet', href='/css/site.css')
+
       link(rel='shortcut icon',href='/favicon.ico')
       link(rel='apple-touch-icon', href='/apple-touch-icon.png')
 

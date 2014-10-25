@@ -43,7 +43,8 @@ module.exports = function (grunt) {
             src: [
               'index.html',
               'favicon.ico',
-              'apple-touch-icon.png'
+              'apple-touch-icon.png',
+              'img/*'
             ],
             dest: appengineStaticdir
           }
@@ -68,6 +69,21 @@ module.exports = function (grunt) {
           out: appengineStaticdir + '/css/site.css'
         }
       }
+    },
+    svgmin: {
+      main: {
+        dist: {
+          files: {}
+        }
+      }
+    },
+    dom_munger: {
+      main: {
+        options: {
+          append: {}
+        },
+        src: [appengineStaticdir + '/**/*.html']
+      }
     }
   });
 
@@ -75,6 +91,26 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-wintersmith');
   grunt.loadNpmTasks('grunt-requirejs');
+  grunt.loadNpmTasks('grunt-dom-munger');
+  grunt.loadNpmTasks('grunt-svgmin');
+
+  grunt.registerTask('inline', function() {
+    var css = grunt.file.read(appengineStaticdir + '/css/site.css');
+    var svgFiles = grunt.file.expand(appengineStaticdir + '/img/*');
+    var files = {};
+
+    for (var i=0; i < svgFiles.length; i++) {
+      files[svgFiles[i]] = svgFiles[i];
+    }
+
+    grunt.config('dom_munger.main.options.append', {
+     selector: 'head',
+     html: '<style>' + css + '</style>'
+    });
+    grunt.config('svgmin.main.files', files);
+
+    grunt.task.run(['dom_munger', 'svgmin']);
+  });
 
   grunt.registerTask('preview', ['clean:wintersmithDir', 'wintersmith:preview']);
   grunt.registerTask('build', [
@@ -83,6 +119,7 @@ module.exports = function (grunt) {
     'wintersmith:build',
     'copy',
     'requirejs',
-    'clean:wintersmithDir'
+    'clean:wintersmithDir',
+    'inline',
   ]);
 };

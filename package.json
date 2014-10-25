@@ -6,9 +6,11 @@
   "repository": "none",
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-dom-munger": "^3.4.0",
     "grunt-requirejs": "~0.4.0",
+    "grunt-svgmin": "^1.0.0",
     "grunt-wintersmith": "0.0.2"
   }
 }
