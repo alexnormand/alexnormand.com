@@ -15,6 +15,17 @@ require(['prettify', 'site'], function(prettify, site) {
   ga('create', 'UA-53654887-1', 'auto');
   ga('send', 'pageview');
 
+  WebFontConfig = {
+    google: { families: [ 'Lora::latin', 'Raleway::latin' ] }
+  };
+
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
 
   site.init();
 });
