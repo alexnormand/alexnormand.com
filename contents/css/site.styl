@@ -43,6 +43,7 @@ header.banner
 
   ul
     list-style-type: none
+    padding: 0
 
   li
     display: inline
@@ -298,12 +299,20 @@ pre
 
 
 @media only screen and (max-width: 800px) {
-    #main, img {
-      width: 95%;
+    #main {
+      margin: 0 20px;
+    }
+
+    img {
+      width: 100%;
     }
 
     header.banner {
       text-align: center;
+    }
+
+    header.banner li {
+      margin: 0;
     }
 
     header.banner nav {
