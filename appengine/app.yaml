@@ -131,7 +131,7 @@ handlers:
   upload: static/(.*\.safariextz)
 
 - url: /(.*\.(svg|svgz))
-  mime_type: images/svg+xml
+  mime_type: image/svg+xml
   static_files: static/\1
   upload: static/(.*\.(svg|svgz))
 
