@@ -1,11 +1,11 @@
 require.config({
   paths: {
-    prettify: 'libs/google-code-prettify/src/prettify',
+    highlight: 'highlight',
     site: 'site'
   }
 });
 
-require(['prettify', 'site'], function(prettify, site) {
+require(['site'], function(site) {
 
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

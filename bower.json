@@ -15,7 +15,6 @@
     "tests"
   ],
   "dependencies": {
-    "google-code-prettify": "~1.0.0",
     "requirejs": "~2.1.8"
   }
 }

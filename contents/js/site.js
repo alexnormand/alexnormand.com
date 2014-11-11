@@ -1,4 +1,4 @@
-define(['prettify'], function(prettify) {
+define(['highlight'], function(hljs) {
   var toArray = function(arrayLike) {
     return [].slice.call(arrayLike);
   };
@@ -15,19 +15,7 @@ define(['prettify'], function(prettify) {
 
     //highlight code blocks
     prettify: function() {
-
-      findAll('pre code').forEach(function(snippet) {
-        var language = snippet.className;
-
-        if (language) {
-          snippet.classList.remove(language);
-          snippet.parentNode.classList.add(language);
-        }
-
-        snippet.parentNode.classList.add('prettyprint');
-      });
-
-      prettyPrint();
+      findAll('pre code').forEach(hljs.highlightBlock);
     },
 
     updateMainContent: function(link) {
