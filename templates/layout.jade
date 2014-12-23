@@ -16,60 +16,50 @@ html(lang='en')
       block page-description
 
       - if (locals.mode == 'development')
+        link(rel='stylesheet', href='/js/libs/pure/pure-min.css')
+        link(rel='stylesheet', href='/js/libs/pure/grids-responsive.css')
+        link(rel='stylesheet', href='/css/highlight.css')
         link(rel='stylesheet', href='/css/site.css')
 
       link(rel='shortcut icon',href='/favicon.ico')
       link(rel='apple-touch-icon', href='/apple-touch-icon.png')
 
   body
-    div#main
-      header.banner.cf
-        block header
-          //- Desktop Menu
+  #layout.pure-g
+      .sidebar.pure-u-1.pure-u-md-1-4
+        .header
+          img(
+            class="me"
+            src="https://1.gravatar.com/avatar/6fbcd51cb382d04eb0ba1b7e6e9dd108?d=https%3A%2F%2Fidenticons.github.com%2F4f3f829c99972f89b41aff400c48b794.png&s=125"
+            height="125"
+            width="125"
+            alt="Alex Normand")
+          h1.brand-title
+            a(href="/") #{locals.owner}
+          h2.brand-tagline Front-End Engineer
+
           nav
-            ul
+            ul.nav-list
               for item in locals.menu
+                li.nav-item
+                  a.pure-button(href=item.url, title=item.description) #{item.name}
+
+      .content.pure-u-1.pure-u-md-3-4#main
+          block main
+          .footer
+            .pure-menu.pure-menu-horizontal.pure-menu-open
+              ul
                 li
-                  a.internal(href=item.url, title=item.description) #{ item.name }
-          div
-            h1
-              a.internal(href='/') #{ locals.owner }
-            h3
-              | Front-End Engineer
+                  a(href="/about") About
+                for item in locals.social
+                  li
+                    a(href=item.url) #{item.name}
 
 
-      section.content.cf
-        block main
-
-      div.me.cf
-        img(
-          src="https://1.gravatar.com/avatar/6fbcd51cb382d04eb0ba1b7e6e9dd108?d=https%3A%2F%2Fidenticons.github.com%2F4f3f829c99972f89b41aff400c48b794.png&s=125"
-          height="125"
-          width="125"
-          alt="Alex Normand")
-
-        ul.social
-          for profile in locals.social
-            li
-              i(class=profile.name.toLowerCase())
-              a(href=profile.url) #{ profile.name }
-
-      footer.cf
-        p
-          | Powered By
-          a(href='http://wintersmith.io') Wintersmith
-          | &
-          a(
-            href='https://developers.google.com/appengine/',
-            title='Google App Engine'
-          )
-            span#appengine Google App Engine
-
-    - if (locals.mode == 'development')
-      script(
-        data-main='/js/main',
-        src='/js/libs/requirejs/require.js'
-      )
-    - else
-      script(async, src="/js/main.js")
-
+  - if (locals.mode == 'development')
+    script(
+      data-main='/js/main',
+      src='/js/libs/requirejs/require.js'
+    )
+  - else
+    script(async, src="/js/main.js")

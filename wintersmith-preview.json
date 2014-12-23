@@ -13,11 +13,6 @@
         "url": "/"
       },
       {
-        "name": "Github",
-        "description": "My Gihub profile",
-        "url": "https://github.com/alexnormand"
-      },
-      {
         "name": "Blog",
         "description": "Blog",
         "url": "/blog"

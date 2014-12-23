@@ -61,19 +61,17 @@ module.exports = function (grunt) {
           out:  appengineStaticdir + '/js/main.js',
           mainConfigFile: wintersmithBuildDir +'/js/main.js',
         }
-      },
-      css: {
-        options: {
-          optimizeCss: 'standard',
-          cssIn: wintersmithBuildDir + '/css/site.css',
-          out: appengineStaticdir + '/css/site.css'
-        }
       }
     },
-    svgmin: {
+    cssmin: {
       main: {
-        dist: {
-          files: {}
+        files: {
+          'appengine/static/css/site.min.css': [
+            'contents/js/libs/pure/pure-min.css',
+            'contents/js/libs/pure/grids-responsive.css',
+            'contents/css/highlight.css',
+            'contents/css/site.css'
+          ]
         }
       }
     },
@@ -89,27 +87,21 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-wintersmith');
   grunt.loadNpmTasks('grunt-requirejs');
   grunt.loadNpmTasks('grunt-dom-munger');
   grunt.loadNpmTasks('grunt-svgmin');
 
   grunt.registerTask('inline', function() {
-    var css = grunt.file.read(appengineStaticdir + '/css/site.css');
-    var svgFiles = grunt.file.expand(appengineStaticdir + '/img/*');
-    var files = {};
-
-    for (var i=0; i < svgFiles.length; i++) {
-      files[svgFiles[i]] = svgFiles[i];
-    }
+    var css = grunt.file.read(appengineStaticdir + '/css/site.min.css');
 
     grunt.config('dom_munger.main.options.append', {
      selector: 'head',
      html: '<style>' + css + '</style>'
     });
-    grunt.config('svgmin.main.files', files);
 
-    grunt.task.run(['dom_munger', 'svgmin']);
+    grunt.task.run(['dom_munger']);
   });
 
   grunt.registerTask('preview', ['clean:wintersmithDir', 'wintersmith:preview']);
@@ -119,6 +111,7 @@ module.exports = function (grunt) {
     'wintersmith:build',
     'copy',
     'requirejs',
+    'cssmin',
     'clean:wintersmithDir',
     'inline',
   ]);

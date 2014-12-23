@@ -9,8 +9,6 @@ block main
   section.hi(itemscope=true, itemtype='http://data-vocabulary.org/Person')
     != page.html
   section.blog_excerpt
-    h1.title Latest blog posts
-
     //- underscore helps us filter and sort our articles
     - var articles = [];
     - _.each(contents.blog._.directories, function(year) {
@@ -27,13 +25,15 @@ block main
     each article in articles
       article.post
         header
-          h3
+          h3.post-title
             a.internal(href=article.url)= article.title
           mixin datetime(article.date)
-        p.content!= article.intro
-        if article.hasMore
-          p.read-more
-            a(href=article.url) read more
+        .post-description
+          if article.intro
+            != article.intro
+          if article.hasMore
+            p.read-more
+              a(href=article.url) read more
 
 
 

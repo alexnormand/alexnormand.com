@@ -1,4 +1,5 @@
 {
+
   "locals": {
     "mode": "prod",
     "url": "http://www.alexnormand.com",
@@ -11,11 +12,6 @@
         "name": "Home",
         "description": "Home Page",
         "url": "/"
-      },
-      {
-        "name": "Github",
-        "description": "My Gihub profile",
-        "url": "https://github.com/alexnormand"
       },
       {
         "name": "Blog",

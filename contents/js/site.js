@@ -31,8 +31,8 @@ define(['highlight'], function(hljs) {
       xhr.responseType = 'document';
 
       xhr.onload = function() {
-        var oldContent = find('section.content');
-        var newContent = find('.content', this.response);
+        var oldContent = find('#main');
+        var newContent = find('#main', this.response);
 
         oldContent.parentNode.replaceChild(newContent, oldContent);
         find('title').textContent = find('title', this.response).textContent;
@@ -49,7 +49,7 @@ define(['highlight'], function(hljs) {
 
     init: function() {
       if (!!(history && history.pushState)) {
-        find('#main').addEventListener('click', function(e) {
+        find('#layout').addEventListener('click', function(e) {
           var link = e.target;
           if (link.nodeName.match(/a/i) &&
               link.host === location.host &&
