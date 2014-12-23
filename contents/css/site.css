@@ -114,6 +114,7 @@ code {
 }
 
 .content {
+    max-width: 900px;
     padding: 2em 1em 0;
 }
 
