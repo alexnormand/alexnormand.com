@@ -3,7 +3,7 @@ title:  Automatically Add Vendor Prefixes During Your Build Process
 author: Alex Normand
 description: Automatically Add Vendor Prefixes During Your Build Process using ant and prefixr
 date: 2012-04-01 19:00
-template: article.jade
+template: article.nunjucks
 ---
 
 Several months ago, the CSS working group discussed the issue of the **-webkit** prefix monopoly and the fact

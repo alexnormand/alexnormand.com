@@ -32,6 +32,14 @@ code {
     padding: 5px 20px;
 }
 
+.archive li {
+    margin: 5px 0;
+}
+
+.archive time {
+    margin: 0 15px 0 0;
+}
+
 .year h2 {
     margin: 0.2em 0;
 }

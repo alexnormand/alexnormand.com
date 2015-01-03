@@ -3,7 +3,7 @@ title: How to show/hide an element and add/remove classes from  an element with 
 author: Alex Normand
 description: How to show/hide an element and add/remove classes from an element with Snap.svg
 date: 2014-03-09 13:15
-template: article.jade
+template: article.nunjucks
 ---
 
 These last couple of weeks I've been working a lot with [Snap.svg](http://snapsvg.io).

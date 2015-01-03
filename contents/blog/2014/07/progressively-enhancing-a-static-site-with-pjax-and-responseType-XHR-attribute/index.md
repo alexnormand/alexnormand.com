@@ -3,7 +3,7 @@ title: How to enhance a static site with pjax and the responseType XHR2 attribut
 author: Alex Normand
 description: HHow to enhance a static site with pjax and the responseType XHR2 attribute
 date: 2014-07-04 00:19
-template: article.jade
+template: article.nunjucks
 ---
 
 

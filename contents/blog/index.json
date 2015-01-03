@@ -1,4 +1,4 @@
 {
-  "template": "archive.jade"
+  "template": "archive.nunjucks"
 }
 

@@ -3,7 +3,7 @@ title:  first blog post
 author: Alex Normand
 description: test
 date: 2012-01-28 21:27
-template: article.jade
+template: article.nunjucks
 ---
 
 Is this working ?

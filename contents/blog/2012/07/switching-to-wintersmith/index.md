@@ -3,7 +3,7 @@ title: Switching to Wintersmith
 author: Alex Normand
 description: Switching to Wintersmith
 date: 2012-07-15 22:42
-template: article.jade
+template: article.nunjucks
 ---
 
 I've decided to Switch this site to another static site generator:

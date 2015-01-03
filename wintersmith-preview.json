@@ -42,7 +42,12 @@
       }
     ]
   },
-  "require": {
-    "_": "underscore"
+  "plugins": [
+    "wintersmith-nunjucks",
+    "./plugins/helpers.js"
+  ],
+  "nunjucks": {
+    "filterdir": "filters",
+    "filters": ["dateonly"]
   }
 }

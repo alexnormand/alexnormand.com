@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "underscore": "~1.5.1"
+    "wintersmith-nunjucks": "^0.5.1"
   },
   "repository": "none",
   "devDependencies": {

@@ -3,7 +3,7 @@ title:  Installing node.js on Debian stable/testing via aptitude
 author: Alex Normand
 description: How to install node.js on Debian stable/testing via aptitude
 date: 2012-02-11 18:00
-template: article.jade
+template: article.nunjucks
 ---
 
 When Installing node.js on Debian you have two options:

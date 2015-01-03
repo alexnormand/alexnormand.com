@@ -3,7 +3,7 @@ title: Installing node.js on a Raspberry Pi
 author: Alex Normand
 description: Installing node.js on a Raspberry Pi
 date: 2014-02-19 00:15
-template: article.jade
+template: article.nunjucks
 ---
 
 Several months ago I acquired my very first [Raspberry PI](http://www.raspberrypi.org/).

@@ -1,7 +1,7 @@
 ---
 title: About me
 description: Alex Normand - About me
-template: about.jade
+template: about.nunjucks
 ---
 
 Hi, I’m Alex Normand, a Front-End Engineer at [Adobe](http://www.adobe.com) where I'm currently
