@@ -16,7 +16,7 @@ require(['site'], function(site) {
   ga('send', 'pageview');
 
   WebFontConfig = {
-    google: { families: [ 'Lora::latin', 'Raleway::latin' ] }
+    google: { families: [ 'Raleway::latin' ] }
   };
 
   (function() {
