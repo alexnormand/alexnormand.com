@@ -18,6 +18,18 @@ define(['highlight'], function(hljs) {
       findAll('pre code').forEach(hljs.highlightBlock);
     },
 
+    removeTumbleMeClassOnAnimationEnd: function() {
+      var prefixes = ["webkit", "moz", "MS", "o", ""];
+
+      prefixes.forEach(function(p) {
+        var type = 'AnimationEnd';
+
+        find('.me').addEventListener(p + (p ? type : type.toLowerCase()), function() {
+          this.classList.remove('tumbleMe');
+        });
+      });
+    },
+
     updateMainContent: function(link) {
       var url = /\.html$/.test(link.href)
                   ? link.href
@@ -39,6 +51,7 @@ define(['highlight'], function(hljs) {
         site.prettify();
 
         newContent.classList.add('animated', 'fadeIn');
+        find('.me').classList.add('tumbleMe');
         window.scrollTo(0, 0);
 
         ga('send', 'pageview', { 'page': url, 'title': find('title').textContent });
@@ -68,6 +81,7 @@ define(['highlight'], function(hljs) {
       }
 
       this.prettify();
+      this.removeTumbleMeClassOnAnimationEnd();
     }
   };
 
