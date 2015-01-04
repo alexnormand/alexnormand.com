@@ -2,7 +2,7 @@
 #*#
 content/media/images/*
 content/media/videos/*
-contents/js/libs/*
+bower_components
 build/*
 appengine/static/*
 .hyde_deps

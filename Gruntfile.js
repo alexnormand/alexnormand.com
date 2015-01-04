@@ -51,15 +51,22 @@ module.exports = function (grunt) {
         ]
       }
     },
-    requirejs: {
-      compile: {
+    browserify: {
+      main: {
+        files: {
+          'appengine/static/js/main.js': 'contents/js/main.js'
+        },
         options: {
-          almond: true,
-          preserveLicenseComments: false,
-          name: 'main',
-          baseUrl: wintersmithBuildDir + '/js',
-          out:  appengineStaticdir + '/js/main.js',
-          mainConfigFile: wintersmithBuildDir +'/js/main.js',
+          browserifyOptions: {
+            standalone: 'A'
+          }
+        }
+      }
+    },
+    uglify: {
+      dist: {
+        files: {
+          'appengine/static/js/main.js': 'appengine/static/js/main.js'
         }
       }
     },
@@ -67,8 +74,8 @@ module.exports = function (grunt) {
       main: {
         files: {
           'appengine/static/css/site.min.css': [
-            'contents/js/libs/pure/pure-min.css',
-            'contents/js/libs/pure/grids-responsive.css',
+            'bower_components/pure/pure-min.css',
+            'bower_components/pure/grids-responsive.css',
             'contents/css/highlight.css',
             'contents/css/site.css'
           ]
@@ -89,9 +96,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-wintersmith');
-  grunt.loadNpmTasks('grunt-requirejs');
   grunt.loadNpmTasks('grunt-dom-munger');
-  grunt.loadNpmTasks('grunt-svgmin');
+  grunt.loadNpmTasks('grunt-browserify');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.registerTask('inline', function() {
     var css = grunt.file.read(appengineStaticdir + '/css/site.min.css');
@@ -104,13 +111,13 @@ module.exports = function (grunt) {
     grunt.task.run(['dom_munger']);
   });
 
-  grunt.registerTask('preview', ['clean:wintersmithDir', 'wintersmith:preview']);
-  grunt.registerTask('build', [
+  grunt.registerTask('default', [
     'clean:appengineDir',
     'clean:wintersmithDir',
     'wintersmith:build',
     'copy',
-    'requirejs',
+    'browserify',
+    'uglify',
     'cssmin',
     'clean:wintersmithDir',
     'inline',

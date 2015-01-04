@@ -15,7 +15,6 @@
     "tests"
   ],
   "dependencies": {
-    "requirejs": "~2.1.8",
     "pure": "~0.5.0"
   }
 }

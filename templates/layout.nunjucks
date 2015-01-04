@@ -58,11 +58,6 @@
         </div>
       </div>
     </div>
-
-    {% if (mode == 'development') %}
-      <script data-main="/js/main" src="/js/libs/requirejs/require.js"></script>
-    {% else %}
-      <script async src="/js/main.js"></script>
-    {% endif %}
+    <script async src="/js/main.js"></script>
   </body>
 </html>
