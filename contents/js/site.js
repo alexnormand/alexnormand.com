@@ -5,7 +5,7 @@ const $ = (selector, context) => {
 };
 
 const $$ = (selector, context) => {
-  return Array.from((context || document).querySelectorAll(selector));
+  return [].slice.call((context || document).querySelectorAll(selector));
 };
 
 const site = {

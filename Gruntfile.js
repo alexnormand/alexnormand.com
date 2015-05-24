@@ -57,10 +57,7 @@ module.exports = function (grunt) {
           'appengine/static/js/main.js': 'contents/js/main.js'
         },
         options: {
-          transform: [['babelify', { 'optional': ['runtime'] }]],
-          browserifyOptions: {
-            standalone: 'A'
-          }
+          transform: ['babelify']
         }
       }
     },
@@ -75,8 +72,8 @@ module.exports = function (grunt) {
       main: {
         files: {
           'appengine/static/css/site.min.css': [
-            'bower_components/pure/pure-min.css',
-            'bower_components/pure/grids-responsive.css',
+            'node_modules/purecss/pure-min.css',
+            'node_modules/purecss/grids-responsive.css',
             'contents/css/highlight.css',
             'contents/css/site.css'
           ]
