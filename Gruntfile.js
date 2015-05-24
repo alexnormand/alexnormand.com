@@ -57,6 +57,7 @@ module.exports = function (grunt) {
           'appengine/static/js/main.js': 'contents/js/main.js'
         },
         options: {
+          transform: [['babelify', { 'optional': ['runtime'] }]],
           browserifyOptions: {
             standalone: 'A'
           }
