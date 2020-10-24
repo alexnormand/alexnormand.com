@@ -8,7 +8,7 @@ template: article.nunjucks
 
 These last couple of weeks I've been working a lot with [Snap.svg](http://snapsvg.io).
 Snap.svg is a revamped version of [Raphael](http://raphaeljs.com) which
-only supports modern browsers, i.e. those who fully support [SVG](http://www.w3.org/TR/SVG/).
+only supports modern browsers, i.e. those who fully support [SVG](https://www.w3.org/TR/SVG/).
 This allows Snap.svg to support all of SVG's cool features such as masking, clipping, groups, ...
 
 <span class="more"></span>
@@ -230,7 +230,7 @@ g {
 
 
 ### Update: 2014/03/29
-After doing a little more [research](http://caniuse.com/#search=classList), it turns out that <code>classList</code> on SVG Elements
+After doing a little more [research](https://caniuse.com/#search=classList), it turns out that <code>classList</code> on SVG Elements
 is not supported in IE, Android Browser and Safari.
 
 I updated <code>addClass</code>, <code>removeClass</code> and <code>toggleClass</code> for full browser support.

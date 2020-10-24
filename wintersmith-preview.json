@@ -1,7 +1,7 @@
 {
   "locals": {
     "mode": "development",
-    "url": "http://www.alexnormand.com",
+    "url": "https://www.alexnormand.com",
     "name": "Alex Normand - Adventures in HTML5, CSS3, JavaScript and the open Web",
     "owner": "Alex Normand",
     "description": "Alex Normand",
@@ -34,7 +34,7 @@
       },
       {
         "name": "Linkedin",
-        "url": "http://www.linkedin.com/pub/alex-normand/41/244/197"
+        "url": "https://www.linkedin.com/pub/alex-normand/41/244/197"
       },
       {
         "name": "Mail",

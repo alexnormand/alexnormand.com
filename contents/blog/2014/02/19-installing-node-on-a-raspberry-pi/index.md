@@ -6,7 +6,7 @@ date: 2014-02-19 00:15
 template: article.nunjucks
 ---
 
-Several months ago I acquired my very first [Raspberry PI](http://www.raspberrypi.org/).
+Several months ago I acquired my very first [Raspberry PI](https://www.raspberrypi.org/).
 One of the first things I wanted to try is how well node runs on it.
 Node works like a charm and installing it on a Raspberry Pi is actually pretty easy and straightforward.
 
@@ -21,7 +21,7 @@ I wrote **[nodepi](http://nodepi.herokuapp.com)**, a little express app which li
 node versions that provide an official *arm-pi* binary archive.
 
 Simply grab the version you want (remember that node uses the
-[even/odd](http://en.wikipedia.org/wiki/Software_versioning#Odd-numbered_versions_for_development_releases)
+[even/odd](https://en.wikipedia.org/wiki/Software_versioning#Odd-numbered_versions_for_development_releases)
 version numbering system) and click the *download* button.
 
 You can also curl the version you wish to download.
@@ -31,7 +31,7 @@ $ curl -L http://nodepi.herokuapp.com/v0.10.24 -o node.tar.gz
 $ tar xvfz node.tar.gz
 ```
 
-Note that nodepi simply redirects to the appropriate file location on <code>http://nodejs.org/dist</code>.
+Note that nodepi simply redirects to the appropriate file location on <code>https://nodejs.org/dist</code>.
 The main reason why I wrote nodepi was to not have to manually look through nodejs.org/dist for
 a specific node version which has an available *arm-pi* binary.
 
@@ -40,7 +40,7 @@ Update your PATH
 There are many great blog posts that will show you how to update your path so you can
 execute *node* in your terminal
 
- * http://joshondesign.com/2013/10/23/noderpi
+ * https://joshondesign.com/2013/10/23/noderpi
  * http://oskarhane.com/raspberry-pi-install-node-js-and-npm/
 
 

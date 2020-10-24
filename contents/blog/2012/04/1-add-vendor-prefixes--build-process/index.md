@@ -10,23 +10,23 @@ Several months ago, the CSS working group discussed the issue of the **-webkit**
 that developers usually don't bother adding other prefixes.
 As a result, browser vendors considered using **-webkit** as the only vendor prefix and thus
 dropping their own prefixes (ie: -moz, -o, -ms,...).
-This suggestion caused an uproar [in](http://lea.verou.me/2012/02/vendor-prefixes-the-css-wg-and-me/)
+This suggestion caused an uproar [in](https://lea.verou.me/2012/02/vendor-prefixes-the-css-wg-and-me/)
 the [web](http://www.glazman.org/weblog/dotclear/index.php?post/2011/11/16/CSS-vendor-prefixes-an-answer-to-Henri-Sivonen)
-[community](http://remysharp.com/2012/02/09/vendor-prefixes-about-to-go-south/).
+[community](https://remysharp.com/2012/02/09/vendor-prefixes-about-to-go-south/).
 
 <span class="more"></span>
 
 
 Currently, the most popular and preferred method to automatically handle vendor prefixes effortlessly is to work with CSS preprocessors
-like [SASS](http://sass-lang.com/), [LESS](http://lesscss.org/) & [Stylus](http://learnboost.github.com/stylus/).
+like [SASS](https://sass-lang.com/), [LESS](http://lesscss.org/) & [Stylus](https://stylus-lang.com/).
 Yet many Developers don't bother using and/or learning these tools.
 You should definitely consider using these tools as they will save you time and hassle.
-Dealing with all [variants](http://peter.sh/experiments/vendor-prefixed-css-property-overview/)
+Dealing with all [variants](https://peter.sh/experiments/vendor-prefixed-css-property-overview/)
 of implemented CSS3 properties by hand can be a time-consuming, error-prone and repetitve task.
 
 
 In this post, I'll show you how you can easily and automatically add missing vendor prefixes in you css files
-during your build process using [ant](http://ant.apache.org/) (or [make](http://www.gnu.org/software/make/manual/make.html))
+during your build process using [ant](https://ant.apache.org/) (or [make](https://www.gnu.org/software/make/manual/make.html))
 and [prefixr](http://prefixr.com/).
 This will ensure that all prefixes are automatically included in your builds.
 
@@ -35,7 +35,7 @@ Our sample project
 ------------------
 
 The sample project we'll be working with is available at
-http://alexnormand.github.com/demos/2012/03/31/build/,
+https://alexnormand.github.com/demos/2012/03/31/build/,
 you can also check out the [source code](https://github.com/alexnormand/demos/tree/gh-pages/2012/03/31) if you wish.
 This simple web page queries imdb using the [imdb api](http://www.imdbapi.com/) via a JSONP request.
 The response is then simply printed on the web page. The CSS stylesheet uses several CSS3 properties such as

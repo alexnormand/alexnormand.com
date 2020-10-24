@@ -8,9 +8,9 @@ template: article.nunjucks
 
 
 In this post, we'll study how to progressively enhance a static website
-(e.g. generated using a SSG like [jekyll](http://jekyllrb.com/) or [wintersmith](http://wintersmith.io/)) by using pjax (HTML5 pushState + AJAX)
-and [responseType](http://www.w3.org/TR/XMLHttpRequest2/#dom-xmlhttprequest-responsetype)
-(an attribute introduced by [XHR2](http://www.w3.org/TR/XMLHttpRequest2/)) in 40 lines of vanilla JavaScript.
+(e.g. generated using a SSG like [jekyll](https://jekyllrb.com/) or [wintersmith](http://wintersmith.io/)) by using pjax (HTML5 pushState + AJAX)
+and [responseType](https://www.w3.org/TR/XMLHttpRequest2/#dom-xmlhttprequest-responsetype)
+(an attribute introduced by [XHR2](https://www.w3.org/TR/XMLHttpRequest2/)) in 40 lines of vanilla JavaScript.
 
 <span class="more"></span>
 
@@ -31,7 +31,7 @@ It can be one of the following:
 
 ## The *responseType* attribute
 
-We'll focus on the [document](http://www.w3.org/TR/XMLHttpRequest/#document-response-entity-body)
+We'll focus on the [document](https://www.w3.org/TR/XMLHttpRequest/#document-response-entity-body)
 responseType. This will set the response type to be a document object rather than just plain text:
 
 ```js
@@ -110,7 +110,7 @@ Yes definitely! This technique works in all modern browsers and degrades gracefu
 older browsers (i.e. IE9 and old android versions).
 
  * [responseType="document"](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/HTML_in_XMLHttpRequest#AutoCompatibilityTable)
- * [history](http://caniuse.com/#feat=history)
+ * [history](https://caniuse.com/#feat=history)
 
 
 ## Demo
@@ -118,7 +118,7 @@ older browsers (i.e. IE9 and old android versions).
 To demonstrate how powerful this is, I've written a simple Moby Dick example.
 The demo uses the combination of **<code>responseType="document"</code>** and **<code>history.pushState</code>** as shown above:
 
-  * [click here to view demo](http://alexnormand.github.io/moby-dick-demo/chapters/1.html)
+  * [click here to view demo](https://alexnormand.github.io/moby-dick-demo/chapters/1.html)
   * [github repo](https://github.com/alexnormand/moby-dick-demo)
 
 

@@ -31,9 +31,9 @@ cp -fr chrome-mac /Applications
 rm -fr chrome-mac chrome-mac.zip
 ```
 
-I then realized after looking on stackoverflow for a one-liner solution that the unzip command [can't unzip](http://serverfault.com/questions/26474/unzipping-files-that-are-flying-in-through-a-pipe) through a unix pipe (as explained in [ruario's answer](http://serverfault.com/a/589528)).
+I then realized after looking on stackoverflow for a one-liner solution that the unzip command [can't unzip](https://serverfault.com/questions/26474/unzipping-files-that-are-flying-in-through-a-pipe) through a unix pipe (as explained in [ruario's answer](https://serverfault.com/a/589528)).
 
-In his answer, ruario suggests using an implementation of tar (`bsdtar`) which is bundled with [libarchive](http://www.libarchive.org/) on [some variants of BSD](http://unix.stackexchange.com/a/104172).
+In his answer, ruario suggests using an implementation of tar (`bsdtar`) which is bundled with [libarchive](https://www.libarchive.org/) on [some variants of BSD](https://unix.stackexchange.com/a/104172).
 
 This version of `bsdtar` can create and extract zip archives!
 

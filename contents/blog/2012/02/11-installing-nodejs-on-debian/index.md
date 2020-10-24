@@ -9,7 +9,7 @@ template: article.nunjucks
 When Installing node.js on Debian you have two options:
 
    * Compiling it from [source](https://github.com/joyent/node) if you need the latest version of node.js
-   * Installing it the Debian Way using the [node.js package](http://packages.debian.org/sid/nodejs)
+   * Installing it the Debian Way using the [node.js package](https://packages.debian.org/sid/nodejs)
  available in the official Debian Sid (unstable) repo.
 
 This post will describe how to install node.js from Debian's package manager.
@@ -27,7 +27,7 @@ deb http://ftp.debian.org/debian/ unstable main contrib non-free
 
 Step 2: Setting aptitude's default Debian release in /etc/apt/apt.conf
 --------------------------------------------------------------------------
-Since [node.js](http://packages.debian.org/sid/nodejs) is the only package you
+Since [node.js](https://packages.debian.org/sid/nodejs) is the only package you
 want to install from the Debian Sid (unstable) repo, you must set aptitude's
 default release. This will prevent all of your packages from being updated to
 the unstable version, and therefore prevent upgrading all of your system to Debian Sid (unstable).
@@ -44,7 +44,7 @@ Create a **/etc/apt/apt.conf** file and add the following line :
 ```
 
 
-You may want to read about [apt-pinning](http://wiki.debian.org/AptPreferences) if you want to have more fine grained control
+You may want to read about [apt-pinning](https://wiki.debian.org/AptPreferences) if you want to have more fine grained control
 over which packages you wish to install on your system.
 
 
