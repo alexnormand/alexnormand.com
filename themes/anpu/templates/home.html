@@ -1,0 +1,9 @@
+{% extends "index.html" %}
+{% set section = get_section(path="blog/_index.md") %}
+
+{% block content %}
+{% set section = get_section(path="blog/_index.md") %}
+{% for page in section.pages %}
+                    {{ page_macros::page_listing(page=page) }}
+                {% endfor %}
+{% endblock %}
