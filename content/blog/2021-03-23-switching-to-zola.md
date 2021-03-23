@@ -1,7 +1,7 @@
 +++
 title = "Switching to Zola"
 date = 2021-03-23
-path = "blog/2021/03/23"
+path = "blog/2021/03/23/switching-to-zola"
 +++
 
 After almost a decade, I decided to migrate to something a little more modern and easy to use.
