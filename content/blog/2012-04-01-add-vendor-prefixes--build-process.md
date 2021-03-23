@@ -37,8 +37,8 @@ This simple web page queries imdb using the [imdb api](http://www.imdbapi.com/) 
 The response is then simply printed on the web page. The CSS stylesheet uses several CSS3 properties such as
 box-shadow, border-radius, gradients, transitions,...
 
-<img src="http://farm8.staticflickr.com/7077/6890313350_4b2b2932e6.jpg" width="500" height="217" alt="alexnormand-demo-imdb-search-box-screenshot">
-<img src="http://farm8.staticflickr.com/7085/6890313356_0e98c7ab0a.jpg" width="486" height="500" alt="alexnormand-demo-imdb-display-result-screenshot">
+<img src="https://farm8.staticflickr.com/7077/6890313350_4b2b2932e6.jpg" width="500" height="217" alt="alexnormand-demo-imdb-search-box-screenshot">
+<img src="https://farm8.staticflickr.com/7085/6890313356_0e98c7ab0a.jpg" width="486" height="500" alt="alexnormand-demo-imdb-display-result-screenshot">
 
 
 We'll use the [prefixr api](http://www.prefixr.com/api/usage/) on the command line to add any missing vendor-prefixed property:
