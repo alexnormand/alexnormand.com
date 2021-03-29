@@ -21,6 +21,6 @@ command = "zola build --base-url $DEPLOY_PRIME_URL"
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy: "default-src 'self'; font-src fonts.gstatic.com; style-src 'self' fonts.googleapis.com"
+    Content-Security-Policy = "default-src 'self'; font-src fonts.gstatic.com; style-src 'self' fonts.googleapis.com"
     X-XSS-Protection = "1; mode=block"
     X-Frame-Options = "DENY"
