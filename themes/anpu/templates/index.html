@@ -6,6 +6,9 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu& display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ get_url(path="favicon.ico", trailing_slash=false) }}" type="image/x-icon">
 
     <title>{% block title %}{{ config.title }}{% endblock title %}</title>
     <meta name="description" content="{{ config.description }}">
@@ -52,10 +55,6 @@
         <footer>
             <p>
                 © {{ config.title }} 2012 - {{ now() | date(format="%Y") }}<br>                
-            </p>
-            <p>
-                {% block footer %}
-                {% endblock footer %}
             </p>
         </footer>
     </div>
